@@ -21,7 +21,6 @@ class IPNavigationController: UINavigationController {
         appearance.shadowImage = UIImage()
         appearance.shadowColor = .clear
         appearance.titleTextAttributes = [
-            .foregroundColor: UIColor.black,
             .font: UIFont.systemFont(ofSize: 15, weight: .bold)
         ]
         
