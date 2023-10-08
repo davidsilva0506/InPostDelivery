@@ -7,6 +7,11 @@
 
 import UIKit
 
+private enum Constants {
+
+    static let title = "Lista przesyłek"
+}
+
 class PackListController: UIViewController {
 
     @IBOutlet private var stackView: UIStackView!
@@ -14,18 +19,24 @@ class PackListController: UIViewController {
     private let packNetworking = PackNetworking()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "Lista przesyłek"
         
-        loadPacks()
+        super.viewDidLoad()
+        
+        self.navigationItem.title = Constants.title
+        
+        self.loadPacks()
     }
     
     private func loadPacks() {
-        packNetworking.getPacks { result in
+        
+        self.packNetworking.getPacks { result in
+            
             self.removePacks()
             
             if case .success(let packs) = result {
+                
                 packs.forEach { pack in
+                    
                     self.addPackView(pack)
                 }
             }
@@ -33,15 +44,18 @@ class PackListController: UIViewController {
     }
     
     private func removePacks() {
-        stackView.arrangedSubviews.forEach { subview in
+        
+        self.stackView.arrangedSubviews.forEach { subview in
+            
             subview.removeFromSuperview()
         }
     }
     
     private func addPackView(_ pack: Pack) {
+        
         let packView = PackView()
         packView.setup(pack: pack)
-        stackView.addArrangedSubview(packView)
+        
+        self.stackView.addArrangedSubview(packView)
     }
-
 }

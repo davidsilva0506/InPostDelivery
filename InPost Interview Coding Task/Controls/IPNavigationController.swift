@@ -10,12 +10,16 @@ import UIKit
 class IPNavigationController: UINavigationController {
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        setupNavigationBar()
+        
+        self.setupNavigationBar()
     }
     
     private func setupNavigationBar() {
+        
         let appearance = UINavigationBarAppearance()
+        
         appearance.backgroundEffect = nil
         appearance.backgroundColor = .systemBackground
         appearance.shadowImage = UIImage()
@@ -27,5 +31,4 @@ class IPNavigationController: UINavigationController {
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
     }
-    
 }
