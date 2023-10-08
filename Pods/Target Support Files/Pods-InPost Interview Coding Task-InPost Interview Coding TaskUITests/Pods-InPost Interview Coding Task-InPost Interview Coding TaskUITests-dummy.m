@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests : NSObject
+@end
+@implementation PodsDummy_Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests
+@end

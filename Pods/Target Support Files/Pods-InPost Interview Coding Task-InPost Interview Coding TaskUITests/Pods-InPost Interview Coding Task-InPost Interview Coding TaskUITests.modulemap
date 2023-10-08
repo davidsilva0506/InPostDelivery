@@ -1,0 +1,6 @@
+framework module Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests {
+  umbrella header "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
