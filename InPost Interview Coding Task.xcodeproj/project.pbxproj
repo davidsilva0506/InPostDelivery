@@ -12,6 +12,10 @@
 		30963D102AD4042B00898F8A /* NetworkingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */; };
 		30963D132AD4047200898F8A /* PackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D122AD4047200898F8A /* PackRequest.swift */; };
 		30963D152AD4049A00898F8A /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D142AD4049900898F8A /* RequestProtocol.swift */; };
+		30963D182AD405D100898F8A /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D172AD405D100898F8A /* ServiceProtocol.swift */; };
+		30963D1A2AD406A700898F8A /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D192AD406A700898F8A /* ServiceLayer.swift */; };
+		30963D1C2AD40BA300898F8A /* PackProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D1B2AD40BA300898F8A /* PackProvider.swift */; };
+		30963D1F2AD40D3100898F8A /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D1E2AD40D3100898F8A /* Core.swift */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
 		D671D95C2913E528001FA9D5 /* PackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListController.swift */; };
 		D671D95F2913E528001FA9D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D671D95D2913E528001FA9D5 /* Main.storyboard */; };
@@ -50,6 +54,10 @@
 		30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConfig.swift; sourceTree = "<group>"; };
 		30963D122AD4047200898F8A /* PackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackRequest.swift; sourceTree = "<group>"; };
 		30963D142AD4049900898F8A /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		30963D172AD405D100898F8A /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		30963D192AD406A700898F8A /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
+		30963D1B2AD40BA300898F8A /* PackProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackProvider.swift; sourceTree = "<group>"; };
+		30963D1E2AD40D3100898F8A /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		83D85C87E2E58F658C011C49 /* Pods-InPost Interview Coding Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +120,24 @@
 				30963D122AD4047200898F8A /* PackRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		30963D162AD405B300898F8A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				30963D1D2AD40BAB00898F8A /* Providers */,
+				30963D172AD405D100898F8A /* ServiceProtocol.swift */,
+				30963D192AD406A700898F8A /* ServiceLayer.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		30963D1D2AD40BAB00898F8A /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				30963D1B2AD40BA300898F8A /* PackProvider.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		913D9F73B32F33C130C9E20B /* Frameworks */ = {
@@ -184,6 +210,7 @@
 			children = (
 				D671D9882913E677001FA9D5 /* Assets */,
 				D671D9572913E528001FA9D5 /* AppDelegate.swift */,
+				30963D1E2AD40D3100898F8A /* Core.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -237,6 +264,7 @@
 			children = (
 				30963D0D2AD403FB00898F8A /* NetworkingLayer.swift */,
 				30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */,
+				30963D162AD405B300898F8A /* Service */,
 				30963D112AD4045500898F8A /* Requests */,
 				D671D99929151360001FA9D5 /* Mock */,
 				D671D9962915111C001FA9D5 /* PackNetworking.swift */,
@@ -493,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30963D1C2AD40BA300898F8A /* PackProvider.swift in Sources */,
 				30963D132AD4047200898F8A /* PackRequest.swift in Sources */,
 				D671D9972915111C001FA9D5 /* PackNetworking.swift in Sources */,
 				D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */,
@@ -500,9 +529,12 @@
 				D671D95C2913E528001FA9D5 /* PackListController.swift in Sources */,
 				D671D9912913F79B001FA9D5 /* PackView.swift in Sources */,
 				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
+				30963D1A2AD406A700898F8A /* ServiceLayer.swift in Sources */,
 				30963D0E2AD403FB00898F8A /* NetworkingLayer.swift in Sources */,
+				30963D1F2AD40D3100898F8A /* Core.swift in Sources */,
 				30963D102AD4042B00898F8A /* NetworkingConfig.swift in Sources */,
 				30963D152AD4049A00898F8A /* RequestProtocol.swift in Sources */,
+				30963D182AD405D100898F8A /* ServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

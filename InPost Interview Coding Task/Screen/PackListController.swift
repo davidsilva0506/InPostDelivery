@@ -17,29 +17,39 @@ class PackListController: UIViewController {
     @IBOutlet private var stackView: UIStackView!
     
     private let packNetworking = PackNetworking()
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         self.navigationItem.title = Constants.title
         
-        self.loadPacks()
+        Task {
+            
+            await self.fetchPacks()
+        }
     }
     
-    private func loadPacks() {
+    private func fetchPacks() async {
         
-        self.packNetworking.getPacks { result in
+        let config = NetworkConfig(name: "JSON Serve API", baseURL: "https://api.jsonserve.com")
+        let network = NetworkLayer(networkConfig: config)
+        let service = ServiceLayer(network: network)
+            
+        do {
+            
+            let packs = try await service.fetchPacks()
             
             self.removePacks()
             
-            if case .success(let packs) = result {
+            if let packs {
                 
-                packs.forEach { pack in
-                    
-                    self.addPackView(pack)
-                }
+                _ = packs.map { self.addPackView($0) }
             }
+            
+        } catch {
+            
+            print(error)
         }
     }
     

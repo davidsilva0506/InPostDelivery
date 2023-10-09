@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
 
     case post = "POST"
     case put = "PUT"
@@ -16,12 +16,12 @@ enum HTTPMethod: String {
     case patch = "PATCH"
 }
 
-enum RequestParams {
+public enum RequestParams {
 
     case URL(_ : [String: Any]?)
 }
 
-protocol Request {
+public protocol Request {
 
     var path: String { get }
     var method: HTTPMethod { get }

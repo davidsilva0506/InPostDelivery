@@ -15,7 +15,7 @@ public enum NetworkError: Error {
     case parsingFailed
 }
 
-private protocol NetworkLayerProtocol {
+public protocol NetworkLayerProtocol: AnyObject {
 
     var session: URLSession { get }
     func execute<T: Codable>(type: T.Type, request: Request) async throws -> T
@@ -24,7 +24,7 @@ private protocol NetworkLayerProtocol {
 class NetworkLayer: NetworkLayerProtocol {
     
     private let networkConfig: NetworkConfig
-    fileprivate let session: URLSession
+    internal let session: URLSession
     
     init(networkConfig: NetworkConfig) {
         
@@ -39,6 +39,7 @@ class NetworkLayer: NetworkLayerProtocol {
         do {
 
             let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
 
             return try decoder.decode(type, from: data)
 
@@ -97,7 +98,7 @@ private extension NetworkLayer {
         }
         
         guard let absoluteURLString = URLRequest.url?.absoluteString,
-              var components = URLComponents(string: absoluteURLString) else {
+              let components = URLComponents(string: absoluteURLString) else {
          
             throw NetworkError.invalidData
         }

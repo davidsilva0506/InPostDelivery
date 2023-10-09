@@ -1,5 +1,5 @@
 //
-//  NetworkingConfig.swift
+//  ServiceProtocol.swift
 //  InPost Interview Coding Task
 //
 //  Created by David Silva on 09/10/2023.
@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct NetworkConfig {
+protocol ServiceProtocol {
 
-    let name: String
-    let baseURL: String
+    var network: NetworkLayerProtocol { get }
 }

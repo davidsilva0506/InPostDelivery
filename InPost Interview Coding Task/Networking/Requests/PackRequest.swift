@@ -9,22 +9,22 @@ import Foundation
 
 private enum Constants {
     
-    static let path = ""
+    static let path = "HumbeQ"
 }
 
 public struct PackRequest: Request {
     
-    var path: String {
+    public var path: String {
         
         return Constants.path
     }
 
-    var method: HTTPMethod {
+    public var method: HTTPMethod {
 
         return .get
     }
 
-    var parameters: RequestParams? {
+    public var parameters: RequestParams? {
 
         return nil
     }
