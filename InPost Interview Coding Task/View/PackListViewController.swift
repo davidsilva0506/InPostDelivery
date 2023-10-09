@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PackListViewController.swift
 //  InPost Interview Coding Task
 //
 //  Created by Damian Piwowarski on 03/11/2022.
@@ -12,7 +12,7 @@ private enum Constants {
     static let title = "Lista przesyłek"
 }
 
-class PackListController: UIViewController {
+class PackListViewController: UIViewController {
 
     @IBOutlet private var stackView: UIStackView!
     

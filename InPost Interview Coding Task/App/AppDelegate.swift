@@ -48,9 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         guard let window,
-              let packListController = storyboard.instantiateViewController(withIdentifier: Constants.root) as? PackListController else { return }
+              let packListViewController = storyboard.instantiateViewController(withIdentifier: Constants.root) as? PackListViewController else { return }
         
-        window.rootViewController = IPNavigationController(rootViewController: packListController)
+        window.rootViewController = IPNavigationController(rootViewController: packListViewController)
         window.makeKeyAndVisible()
     }
 }

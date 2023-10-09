@@ -17,7 +17,7 @@
 		30963D1C2AD40BA300898F8A /* PackProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D1B2AD40BA300898F8A /* PackProvider.swift */; };
 		30963D1F2AD40D3100898F8A /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D1E2AD40D3100898F8A /* Core.swift */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
-		D671D95C2913E528001FA9D5 /* PackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListController.swift */; };
+		D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListViewController.swift */; };
 		D671D95F2913E528001FA9D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D671D95D2913E528001FA9D5 /* Main.storyboard */; };
 		D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D671D9602913E529001FA9D5 /* Assets.xcassets */; };
 		D671D9642913E529001FA9D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D671D9622913E529001FA9D5 /* LaunchScreen.storyboard */; };
@@ -67,7 +67,7 @@
 		9D61EABD2778CE163139EDFE /* Pods_InPost_Interview_Coding_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPost_Interview_Coding_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D671D9542913E528001FA9D5 /* InPost Interview Coding Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InPost Interview Coding Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D671D9572913E528001FA9D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D671D95B2913E528001FA9D5 /* PackListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackListController.swift; sourceTree = "<group>"; };
+		D671D95B2913E528001FA9D5 /* PackListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackListViewController.swift; sourceTree = "<group>"; };
 		D671D95E2913E528001FA9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D671D9602913E529001FA9D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D671D9632913E529001FA9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,6 +140,30 @@
 			path = Providers;
 			sourceTree = "<group>";
 		};
+		30963D202AD4379E00898F8A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D671D9922913F81D001FA9D5 /* PackView */,
+				D671D95B2913E528001FA9D5 /* PackListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		30963D212AD437A500898F8A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		30963D222AD4383100898F8A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		913D9F73B32F33C130C9E20B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,10 +212,11 @@
 			isa = PBXGroup;
 			children = (
 				D671D9872913E649001FA9D5 /* App */,
-				D671D98A2913ED95001FA9D5 /* Controls */,
-				D671D98D2913F297001FA9D5 /* Model */,
 				D671D9952915110C001FA9D5 /* Networking */,
-				D671D9892913E685001FA9D5 /* Screen */,
+				30963D222AD4383100898F8A /* Navigation */,
+				D671D98D2913F297001FA9D5 /* Model */,
+				30963D202AD4379E00898F8A /* View */,
+				30963D212AD437A500898F8A /* ViewModel */,
 				D671D9652913E529001FA9D5 /* Info.plist */,
 			);
 			path = "InPost Interview Coding Task";
@@ -223,23 +248,6 @@
 				D671D9622913E529001FA9D5 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		D671D9892913E685001FA9D5 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				D671D95B2913E528001FA9D5 /* PackListController.swift */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		D671D98A2913ED95001FA9D5 /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				D671D9922913F81D001FA9D5 /* PackView */,
-				D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */,
-			);
-			path = Controls;
 			sourceTree = "<group>";
 		};
 		D671D98D2913F297001FA9D5 /* Model */ = {
@@ -526,7 +534,7 @@
 				D671D9972915111C001FA9D5 /* PackNetworking.swift in Sources */,
 				D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */,
 				D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */,
-				D671D95C2913E528001FA9D5 /* PackListController.swift in Sources */,
+				D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */,
 				D671D9912913F79B001FA9D5 /* PackView.swift in Sources */,
 				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
 				30963D1A2AD406A700898F8A /* ServiceLayer.swift in Sources */,

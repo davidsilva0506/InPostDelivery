@@ -7,6 +7,11 @@
 
 import UIKit
 
+private enum Constants {
+
+    static let fontSize: CGFloat = 15
+}
+
 class IPNavigationController: UINavigationController {
     
     override func viewDidLoad() {
@@ -25,7 +30,7 @@ class IPNavigationController: UINavigationController {
         appearance.shadowImage = UIImage()
         appearance.shadowColor = .clear
         appearance.titleTextAttributes = [
-            .font: UIFont.systemFont(ofSize: 15, weight: .bold)
+            .font: UIFont.systemFont(ofSize: Constants.fontSize, weight: .bold)
         ]
         
         navigationBar.standardAppearance = appearance
