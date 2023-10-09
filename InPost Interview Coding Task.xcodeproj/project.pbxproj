@@ -22,6 +22,8 @@
 		30963D2C2AD43CF500898F8A /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30963D272AD43CF500898F8A /* Montserrat-SemiBold.otf */; };
 		30963D2D2AD43CF500898F8A /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30963D282AD43CF500898F8A /* Montserrat-ExtraBold.otf */; };
 		30963D6B2AD44A6900898F8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D6A2AD44A6900898F8A /* SceneDelegate.swift */; };
+		30963D6E2AD4507400898F8A /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D6D2AD4507400898F8A /* UIView+Util.swift */; };
+		30963D702AD451B000898F8A /* PackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D6F2AD451B000898F8A /* PackTableViewCell.swift */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
 		D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListViewController.swift */; };
 		D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D671D9602913E529001FA9D5 /* Assets.xcassets */; };
@@ -69,6 +71,8 @@
 		30963D272AD43CF500898F8A /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		30963D282AD43CF500898F8A /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
 		30963D6A2AD44A6900898F8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		30963D6D2AD4507400898F8A /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
+		30963D6F2AD451B000898F8A /* PackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackTableViewCell.swift; sourceTree = "<group>"; };
 		58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		83D85C87E2E58F658C011C49 /* Pods-InPost Interview Coding Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			children = (
 				D671D9922913F81D001FA9D5 /* PackView */,
 				D671D95B2913E528001FA9D5 /* PackListViewController.swift */,
+				30963D6F2AD451B000898F8A /* PackTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +189,14 @@
 				30963D272AD43CF500898F8A /* Montserrat-SemiBold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		30963D6C2AD4504A00898F8A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30963D6D2AD4507400898F8A /* UIView+Util.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		913D9F73B32F33C130C9E20B /* Frameworks */ = {
@@ -239,6 +252,7 @@
 				D671D98D2913F297001FA9D5 /* Model */,
 				30963D202AD4379E00898F8A /* View */,
 				30963D212AD437A500898F8A /* ViewModel */,
+				30963D6C2AD4504A00898F8A /* Extensions */,
 				D671D9652913E529001FA9D5 /* Info.plist */,
 			);
 			path = "InPost Interview Coding Task";
@@ -556,8 +570,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30963D702AD451B000898F8A /* PackTableViewCell.swift in Sources */,
 				30963D1C2AD40BA300898F8A /* PackProvider.swift in Sources */,
 				30963D132AD4047200898F8A /* PackRequest.swift in Sources */,
+				30963D6E2AD4507400898F8A /* UIView+Util.swift in Sources */,
 				D671D9972915111C001FA9D5 /* PackNetworking.swift in Sources */,
 				D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */,
 				D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */,
