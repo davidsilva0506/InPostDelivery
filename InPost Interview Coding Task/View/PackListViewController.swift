@@ -13,8 +13,6 @@ private enum Constants {
 }
 
 class PackListViewController: UIViewController {
-
-    @IBOutlet private var stackView: UIStackView!
     
     private let packNetworking = PackNetworking()
 
@@ -23,11 +21,11 @@ class PackListViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = Constants.title
-        
-        Task {
+        self.view.backgroundColor = .yellow
+        //Task {
             
-            await self.fetchPacks()
-        }
+            //await self.fetchPacks()
+        //}
     }
     
     private func fetchPacks() async {
@@ -55,17 +53,17 @@ class PackListViewController: UIViewController {
     
     private func removePacks() {
         
-        self.stackView.arrangedSubviews.forEach { subview in
-            
-            subview.removeFromSuperview()
-        }
+//        self.stackView.arrangedSubviews.forEach { subview in
+//
+//            subview.removeFromSuperview()
+//        }
     }
     
     private func addPackView(_ pack: Pack) {
         
-        let packView = PackView()
-        packView.setup(pack: pack)
-        
-        self.stackView.addArrangedSubview(packView)
+//        let packView = PackView()
+//        packView.setup(pack: pack)
+//
+//        self.stackView.addArrangedSubview(packView)
     }
 }
