@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0ABB2A19C1443362ECFE34A7 /* Pods_InPost_Interview_Coding_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D6C720825E15C8DB9CDFC0 /* Pods_InPost_Interview_Coding_TaskTests.framework */; };
+		30963D0E2AD403FB00898F8A /* NetworkingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0D2AD403FB00898F8A /* NetworkingLayer.swift */; };
+		30963D102AD4042B00898F8A /* NetworkingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */; };
+		30963D132AD4047200898F8A /* PackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D122AD4047200898F8A /* PackRequest.swift */; };
+		30963D152AD4049A00898F8A /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D142AD4049900898F8A /* RequestProtocol.swift */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
 		D671D95C2913E528001FA9D5 /* PackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListController.swift */; };
 		D671D95F2913E528001FA9D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D671D95D2913E528001FA9D5 /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30963D0D2AD403FB00898F8A /* NetworkingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLayer.swift; sourceTree = "<group>"; };
+		30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConfig.swift; sourceTree = "<group>"; };
+		30963D122AD4047200898F8A /* PackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackRequest.swift; sourceTree = "<group>"; };
+		30963D142AD4049900898F8A /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		83D85C87E2E58F658C011C49 /* Pods-InPost Interview Coding Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30963D112AD4045500898F8A /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				30963D142AD4049900898F8A /* RequestProtocol.swift */,
+				30963D122AD4047200898F8A /* PackRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		913D9F73B32F33C130C9E20B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +235,9 @@
 		D671D9952915110C001FA9D5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				30963D0D2AD403FB00898F8A /* NetworkingLayer.swift */,
+				30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */,
+				30963D112AD4045500898F8A /* Requests */,
 				D671D99929151360001FA9D5 /* Mock */,
 				D671D9962915111C001FA9D5 /* PackNetworking.swift */,
 			);
@@ -473,12 +493,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30963D132AD4047200898F8A /* PackRequest.swift in Sources */,
 				D671D9972915111C001FA9D5 /* PackNetworking.swift in Sources */,
 				D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */,
 				D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */,
 				D671D95C2913E528001FA9D5 /* PackListController.swift in Sources */,
 				D671D9912913F79B001FA9D5 /* PackView.swift in Sources */,
 				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
+				30963D0E2AD403FB00898F8A /* NetworkingLayer.swift in Sources */,
+				30963D102AD4042B00898F8A /* NetworkingConfig.swift in Sources */,
+				30963D152AD4049A00898F8A /* RequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
