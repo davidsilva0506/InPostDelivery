@@ -16,6 +16,11 @@
 		30963D1A2AD406A700898F8A /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D192AD406A700898F8A /* ServiceLayer.swift */; };
 		30963D1C2AD40BA300898F8A /* PackProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D1B2AD40BA300898F8A /* PackProvider.swift */; };
 		30963D1F2AD40D3100898F8A /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D1E2AD40D3100898F8A /* Core.swift */; };
+		30963D292AD43CF500898F8A /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30963D242AD43CF500898F8A /* Montserrat-Bold.otf */; };
+		30963D2A2AD43CF500898F8A /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30963D252AD43CF500898F8A /* Montserrat-Black.otf */; };
+		30963D2B2AD43CF500898F8A /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30963D262AD43CF500898F8A /* Montserrat-Medium.otf */; };
+		30963D2C2AD43CF500898F8A /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30963D272AD43CF500898F8A /* Montserrat-SemiBold.otf */; };
+		30963D2D2AD43CF500898F8A /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30963D282AD43CF500898F8A /* Montserrat-ExtraBold.otf */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
 		D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListViewController.swift */; };
 		D671D95F2913E528001FA9D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D671D95D2913E528001FA9D5 /* Main.storyboard */; };
@@ -58,6 +63,11 @@
 		30963D192AD406A700898F8A /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
 		30963D1B2AD40BA300898F8A /* PackProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackProvider.swift; sourceTree = "<group>"; };
 		30963D1E2AD40D3100898F8A /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		30963D242AD43CF500898F8A /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		30963D252AD43CF500898F8A /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		30963D262AD43CF500898F8A /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		30963D272AD43CF500898F8A /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		30963D282AD43CF500898F8A /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
 		58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		83D85C87E2E58F658C011C49 /* Pods-InPost Interview Coding Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +174,18 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		30963D232AD43CE100898F8A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				30963D252AD43CF500898F8A /* Montserrat-Black.otf */,
+				30963D242AD43CF500898F8A /* Montserrat-Bold.otf */,
+				30963D282AD43CF500898F8A /* Montserrat-ExtraBold.otf */,
+				30963D262AD43CF500898F8A /* Montserrat-Medium.otf */,
+				30963D272AD43CF500898F8A /* Montserrat-SemiBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		913D9F73B32F33C130C9E20B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +255,7 @@
 		D671D9872913E649001FA9D5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				30963D232AD43CE100898F8A /* Fonts */,
 				D671D9882913E677001FA9D5 /* Assets */,
 				D671D9572913E528001FA9D5 /* AppDelegate.swift */,
 				30963D1E2AD40D3100898F8A /* Core.swift */,
@@ -397,11 +420,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30963D2D2AD43CF500898F8A /* Montserrat-ExtraBold.otf in Resources */,
 				D671D9642913E529001FA9D5 /* LaunchScreen.storyboard in Resources */,
+				30963D2B2AD43CF500898F8A /* Montserrat-Medium.otf in Resources */,
 				D671D99E2915139F001FA9D5 /* packs.json in Resources */,
+				30963D2C2AD43CF500898F8A /* Montserrat-SemiBold.otf in Resources */,
 				D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */,
 				D671D95F2913E528001FA9D5 /* Main.storyboard in Resources */,
 				D671D9942913F82E001FA9D5 /* PackView.xib in Resources */,
+				30963D292AD43CF500898F8A /* Montserrat-Bold.otf in Resources */,
+				30963D2A2AD43CF500898F8A /* Montserrat-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
