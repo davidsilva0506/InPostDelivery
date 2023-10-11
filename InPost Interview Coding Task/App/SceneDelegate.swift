@@ -22,14 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        self.setupCore()
+
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
         guard let window = self.window else { return }
-        
+
         window.windowScene = windowScene
-        window.rootViewController = IPNavigationController(rootViewController: PackListViewController())
+        window.rootViewController = self.rootViewController()
         window.makeKeyAndVisible()
     }
 }
@@ -46,5 +48,19 @@ extension SceneDelegate {
         let service = ServiceLayer(network: network)
         
         self.core = Core(network: network, service: service)
+    }
+    
+    private func rootViewController() -> UINavigationController {
+        
+        guard let core else {
+            
+            assertionFailure("We should have core at this stage")
+            return UINavigationController()
+        }
+        
+        let packListViewModel = PackListViewModel(provider: core.service)
+        let packListViewController = PackListViewController(viewModel: packListViewModel)
+        
+        return IPNavigationController(rootViewController: packListViewController)
     }
 }

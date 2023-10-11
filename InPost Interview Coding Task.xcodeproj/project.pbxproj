@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0ABB2A19C1443362ECFE34A7 /* Pods_InPost_Interview_Coding_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D6C720825E15C8DB9CDFC0 /* Pods_InPost_Interview_Coding_TaskTests.framework */; };
+		3039B5342AD6A8FA00D7E915 /* PackListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5332AD6A8FA00D7E915 /* PackListViewModel.swift */; };
+		3039B5362AD6B3BC00D7E915 /* Collection+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5352AD6B3BC00D7E915 /* Collection+Util.swift */; };
 		30963D0E2AD403FB00898F8A /* NetworkingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0D2AD403FB00898F8A /* NetworkingLayer.swift */; };
 		30963D102AD4042B00898F8A /* NetworkingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */; };
 		30963D132AD4047200898F8A /* PackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D122AD4047200898F8A /* PackRequest.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3039B5332AD6A8FA00D7E915 /* PackListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackListViewModel.swift; sourceTree = "<group>"; };
+		3039B5352AD6B3BC00D7E915 /* Collection+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Util.swift"; sourceTree = "<group>"; };
 		30963D0D2AD403FB00898F8A /* NetworkingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLayer.swift; sourceTree = "<group>"; };
 		30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConfig.swift; sourceTree = "<group>"; };
 		30963D122AD4047200898F8A /* PackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackRequest.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 		30963D212AD437A500898F8A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3039B5332AD6A8FA00D7E915 /* PackListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				30963D6D2AD4507400898F8A /* UIView+Util.swift */,
+				3039B5352AD6B3BC00D7E915 /* Collection+Util.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -577,8 +583,10 @@
 				D671D9972915111C001FA9D5 /* PackNetworking.swift in Sources */,
 				D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */,
 				D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */,
+				3039B5342AD6A8FA00D7E915 /* PackListViewModel.swift in Sources */,
 				30963D6B2AD44A6900898F8A /* SceneDelegate.swift in Sources */,
 				D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */,
+				3039B5362AD6B3BC00D7E915 /* Collection+Util.swift in Sources */,
 				D671D9912913F79B001FA9D5 /* PackView.swift in Sources */,
 				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
 				30963D1A2AD406A700898F8A /* ServiceLayer.swift in Sources */,

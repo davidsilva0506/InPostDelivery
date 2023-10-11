@@ -6,19 +6,56 @@
 //
 
 import UIKit
-
-private enum Constants {
-
-    static let title = "Lista przesyłek"
-    static let cellIdentifier = "PackTableViewCell"
-}
+import Combine
 
 class PackListViewController: UIViewController {
     
-    private let packNetworking = PackNetworking()
+    // MARK: Constants
+    private enum Constants {
+
+        static let title = "Lista przesyłek"
+        static let cellIdentifier = "PackTableViewCell"
+    }
+
+    // MARK: - Properties
+    private let viewModel: PackListViewModel
+
+    private var observers = Set<AnyCancellable>()
     
-    private let tableView = UITableView()
-    private var packs: [Pack] = []
+    private lazy var refreshControl: UIRefreshControl = {
+    
+        let refreshControl = UIRefreshControl()
+        
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+
+        return refreshControl
+    }()
+    
+    private lazy var tableView: UITableView = {
+
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        return tableView
+    }()
+    
+    // MARK: - Lifecycle
+    init(viewModel: PackListViewModel) {
+
+        self.viewModel = viewModel
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         
@@ -30,52 +67,26 @@ class PackListViewController: UIViewController {
         self.configureSubviews()
         self.defineSubviewConstraints()
         
-        Task {
-            
-            await self.fetchPacks()
-        }
+        self.bindToViewModel()
+        
+        self.viewModel.fetchPacks()
     }
     
-    private func fetchPacks() async {
+    @objc private func refresh(_ sender: Any) {
         
-        let config = NetworkConfig(name: "JSON Serve API", baseURL: "https://api.jsonserve.com")
-        let network = NetworkLayer(networkConfig: config)
-        let service = ServiceLayer(network: network)
-            
-        do {
-            
-            let packs = try await service.fetchPacks()
-            
-            //self.removePacks()
-            
-            if let packs {
-                
-                self.packs = packs
-                
-                self.tableView.reloadData()
-              //  _ = packs.map { self.addPackView($0) }
-            }
-            
-        } catch {
-            
-            print(error)
-        }
+        self.viewModel.fetchPacks()
     }
+}
+
+// MARK: - Bind
+private extension PackListViewController {
     
-    private func removePacks() {
+    func bindToViewModel() {
         
-//        self.stackView.arrangedSubviews.forEach { subview in
-//
-//            subview.removeFromSuperview()
-//        }
-    }
-    
-    private func addPackView(_ pack: Pack) {
-        
-//        let packView = PackView()
-//        packView.setup(pack: pack)
-//
-//        self.stackView.addArrangedSubview(packView)
+        self.viewModel.currentState.receive(on: DispatchQueue.main).sink { state in
+
+            self.configureUI(for: state)
+        }.store(in: &self.observers)
     }
 }
 
@@ -89,15 +100,44 @@ private extension PackListViewController {
     
     func configureSubviews() {
         
-        self.tableView.translatesAutoresizingMaskIntoConstraints = false
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
         self.tableView.register(PackTableViewCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
+        self.tableView.addSubview(self.refreshControl)
     }
     
     func defineSubviewConstraints() {
 
         self.tableView.pin(to: self.view)
+    }
+    
+    func configureUI(for state: PackState) {
+
+        switch state {
+
+        case .loaded:
+
+            self.hideActivityOverlay()
+            self.refreshControl.endRefreshing()
+            self.tableView.reloadData()
+
+        case .error(let error):
+            self.hideActivityOverlay()
+            self.handleError(error)
+
+        case .loading:
+            self.showActivityOverlay()
+        }
+    }
+    
+    func showActivityOverlay() {
+        
+    }
+    
+    func hideActivityOverlay() {
+        
+    }
+    
+    func handleError(_ error: Error) {
+        
     }
 }
 
@@ -109,19 +149,60 @@ extension PackListViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension PackListViewController: UITableViewDataSource {
     
+    enum PackListViewControllerSection: Int {
+
+        case ready = 0
+        case other = 1
+
+        func headerTitle() -> String? {
+
+            switch self {
+                case .ready: return "Gotowe do odbioru"
+                case .other: return "Pozostale"
+            }
+        }
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return self.viewModel.packs.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return PackListViewControllerSection(rawValue: section)?.headerTitle()
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+
+        return UITableView.automaticDimension
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.packs.count
+        guard let packs = self.viewModel.packs[safe: section] else {
+
+            assertionFailure("IndexPath out of bounds")
+            return 0
+        }
+
+        return packs.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        guard let packs = self.viewModel.packs[safe: indexPath.section],
+                let pack = packs[safe: indexPath.row] else {
+
+            assertionFailure("IndexPath out of bounds")
+            return UITableViewCell()
+        }
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier) as? PackTableViewCell else {
             
             return UITableViewCell()
         }
-        
-        let pack = self.packs[indexPath.row]
+
         cell.configure(pack: pack)
         
         return cell

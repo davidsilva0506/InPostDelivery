@@ -9,5 +9,5 @@ import Foundation
 
 protocol PackProvider: AnyObject {
 
-    func fetchPacks() async throws -> [Pack]?
+    func fetchPacks() async throws -> [Pack]
 }

@@ -17,11 +17,11 @@ final class ServiceLayer: ServiceProtocol, PackProvider {
         self.network = network
     }
     
-    func fetchPacks() async throws -> [Pack]? {
+    func fetchPacks() async throws -> [Pack] {
 
         let packRequest = PackRequest()
         
-        var packs: [Pack]?
+        var packs: [Pack]
 
         do {
             

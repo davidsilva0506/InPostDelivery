@@ -11,6 +11,7 @@ class PackTableViewCell: UITableViewCell {
     
     var packInfoContainer = UIView()
     var packStatusContainer = UIView()
+    var packSenderContainer = UIView()
 
     var packNumberTitleLabel = UILabel()
     var packNumberLabel = UILabel()
@@ -56,23 +57,22 @@ private extension PackTableViewCell {
         
         self.packInfoContainer.add(self.packNumberTitleLabel, self.packNumberLabel)
         
-        self.packStatusContainer.add(self.packStatusTitleLabel,
-                                     self.packStatusLabel,
-                                     self.packSenderTitleLabel,
-                                     self.packSenderLabel)
+        self.packStatusContainer.add(self.packStatusTitleLabel, self.packStatusLabel)
         
-        self.contentView.add(self.packInfoContainer, self.packStatusContainer)
+        self.packSenderContainer.add(self.packSenderTitleLabel, self.packSenderLabel)
+        
+        self.contentView.add(self.packInfoContainer, self.packStatusContainer, self.packSenderContainer)
     }
     
     func configureSubviews() {
-        
-        
+
     }
     
     func defineSubviewConstraints() {
 
         self.packInfoContainer.translatesAutoresizingMaskIntoConstraints = false
         self.packStatusContainer.translatesAutoresizingMaskIntoConstraints = false
+        self.packSenderContainer.translatesAutoresizingMaskIntoConstraints = false
 
         self.packNumberTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.packNumberLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -95,13 +95,15 @@ private extension PackTableViewCell {
         
         self.packStatusLabel.topAnchor.constraint(equalTo: self.packStatusTitleLabel.bottomAnchor).isActive = true
         self.packStatusLabel.leadingAnchor.constraint(equalTo: self.packStatusContainer.leadingAnchor).isActive = true
+        self.packStatusLabel.bottomAnchor.constraint(equalTo: self.packStatusContainer.bottomAnchor).isActive = true
         
-        self.packSenderTitleLabel.topAnchor.constraint(equalTo: self.packStatusLabel.bottomAnchor, constant: 16).isActive = true
-        self.packSenderTitleLabel.leadingAnchor.constraint(equalTo: self.packStatusContainer.leadingAnchor).isActive = true
+        //Pack Sender
+        self.packSenderTitleLabel.topAnchor.constraint(equalTo: self.packSenderContainer.topAnchor).isActive = true
+        self.packSenderTitleLabel.leadingAnchor.constraint(equalTo: self.packSenderContainer.leadingAnchor).isActive = true
         
         self.packSenderLabel.topAnchor.constraint(equalTo: self.packSenderTitleLabel.bottomAnchor).isActive = true
-        self.packSenderLabel.leadingAnchor.constraint(equalTo: self.packStatusContainer.leadingAnchor).isActive = true
-        self.packSenderLabel.bottomAnchor.constraint(equalTo: self.packStatusContainer.bottomAnchor).isActive = true
+        self.packSenderLabel.leadingAnchor.constraint(equalTo: self.packSenderContainer.leadingAnchor).isActive = true
+        self.packSenderLabel.bottomAnchor.constraint(equalTo: self.packSenderContainer.bottomAnchor).isActive = true
         
         //Containers
         self.packInfoContainer.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 16).isActive = true
@@ -111,6 +113,10 @@ private extension PackTableViewCell {
         self.packStatusContainer.topAnchor.constraint(equalTo: self.packInfoContainer.bottomAnchor, constant: 16).isActive = true
         self.packStatusContainer.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
         self.packStatusContainer.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
-        self.packStatusContainer.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 8).isActive = true
+        
+        self.packSenderContainer.topAnchor.constraint(equalTo: self.packStatusContainer.bottomAnchor, constant: 16).isActive = true
+        self.packSenderContainer.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
+        self.packSenderContainer.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
+        self.packSenderContainer.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8).isActive = true
     }
 }

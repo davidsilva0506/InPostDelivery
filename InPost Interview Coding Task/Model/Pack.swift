@@ -24,6 +24,23 @@ import Foundation
  * 13. PICKUP_TIME_EXPIRED
  */
 
+enum PackStatus: String {
+    
+    case created = "CREATED"
+    case confirmed = "CONFIRMED"
+    case adoptedAtSourceBranch = "ADOPTED_AT_SOURCE_BRANCH"
+    case sentFromSourceBranch = "SENT_FROM_SOURCE_BRANCH"
+    case adoptedAtSortingCenter = "ADOPTED_AT_SORTING_CENTER"
+    case sentFromSortingCenter = "SENT_FROM_SORTING_CENTER"
+    case other = "OTHER"
+    case delivered = "DELIVERED"
+    case returnedToSender = "RETURNED_TO_SENDER"
+    case avizo = "AVIZO"
+    case outForDelivery = "OUT_FOR_DELIVERY"
+    case readyToPickUp = "READY_TO_PICKUP"
+    case pickUpTimeExpired = "PICKUP_TIME_EXPIRED"
+}
+
 struct Pack: Codable {
     
     let id: String
