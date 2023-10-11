@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 private enum Constants {
     
@@ -46,8 +47,10 @@ extension SceneDelegate {
         let network = NetworkLayer(networkConfig: config)
         
         let service = ServiceLayer(network: network)
-        
-        self.core = Core(network: network, service: service)
+            
+        let realm = try? Realm()
+            
+        self.core = Core(network: network, service: service, realm: realm)
     }
     
     private func rootViewController() -> UINavigationController {
@@ -58,7 +61,7 @@ extension SceneDelegate {
             return UINavigationController()
         }
         
-        let packListViewModel = PackListViewModel(provider: core.service)
+        let packListViewModel = PackListViewModel(provider: core.service, realm: core.realm)
         let packListViewController = PackListViewController(viewModel: packListViewModel)
         
         return IPNavigationController(rootViewController: packListViewController)

@@ -6,17 +6,20 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class Core: NSObject {
     
     let network: NetworkLayer
     let service: ServiceLayer
+    var realm: Realm?
 
-    init(network: NetworkLayer, service: ServiceLayer) {
+    init(network: NetworkLayer, service: ServiceLayer, realm: Realm?) {
         
         self.network = network
         self.service = service
-        
+        self.realm = realm
+
         super.init()
     }
 }

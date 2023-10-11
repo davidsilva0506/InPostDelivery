@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import RealmSwift
 
 enum PackState {
 
@@ -22,13 +23,15 @@ final class PackListViewModel: NSObject {
 
     // MARK: - Properties
     private unowned let provider: PackProvider
-
+    
+    private var realm: Realm?
     private(set) var currentState = PassthroughSubject<PackState, Never>()
     private(set) var packs: [[Pack]] = []
 
-    init(provider: PackProvider) {
+    init(provider: PackProvider, realm: Realm?) {
 
         self.provider = provider
+        self.realm = realm
     }
 }
 
@@ -49,7 +52,7 @@ extension PackListViewModel {
             do {
                 
                 let packs = try await self.provider.fetchPacks()
-                
+
                 self.packs = self.groupPacks(packs)
                 
                 self.currentState.send(.loaded)
@@ -66,15 +69,31 @@ extension PackListViewModel {
 private extension PackListViewModel {
  
     func groupPacks(_ packs: [Pack]) -> [[Pack]] {
-        
-        return packs.chunked(into: 4)
-    }
-}
 
-extension Array {
-    func chunked(into size: Int) -> [[Element]] {
-        return stride(from: 0, to: count, by: size).map {
-            Array(self[$0 ..< Swift.min($0 + size, count)])
+        let readyPacks = packs.filter { $0.status.activityStatus == .ready }
+        let otherPacks = packs.filter { $0.status.activityStatus == .other }
+
+        let orderedReadyPacks = self.orderPacks(readyPacks)
+        let orderedOtherPacks = self.orderPacks(otherPacks)
+
+        return [orderedReadyPacks, orderedOtherPacks]
+    }
+ 
+    func orderPacks(_ packs: [Pack]) -> [Pack] {
+        
+        return packs.sorted {
+            
+            ($0.status.order,
+             $0.pickupDate ?? Date.distantFuture,
+             $0.expiryDate ?? Date.distantFuture,
+             $0.storedDate ?? Date.distantFuture,
+             $0.id)
+            <
+            ($1.status.order,
+             $1.pickupDate ?? Date.distantFuture,
+             $1.expiryDate ?? Date.distantFuture,
+             $1.storedDate ?? Date.distantFuture,
+             $1.id)
         }
     }
 }

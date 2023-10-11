@@ -25,7 +25,7 @@ class PackTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.addSubviews()
-        self.configureSubviews()
+        self.configureView()
         self.defineSubviewConstraints()
     }
     
@@ -45,7 +45,7 @@ extension PackTableViewCell {
         self.packSenderTitleLabel.text = "NADAWCA"
 
         self.packNumberLabel.text = pack.id
-        self.packStatusLabel.text = pack.status
+        self.packStatusLabel.text = pack.status.text
         self.packSenderLabel.text = pack.sender
     }
 }
@@ -64,8 +64,9 @@ private extension PackTableViewCell {
         self.contentView.add(self.packInfoContainer, self.packStatusContainer, self.packSenderContainer)
     }
     
-    func configureSubviews() {
+    func configureView() {
 
+        self.selectionStyle = .none
     }
     
     func defineSubviewConstraints() {

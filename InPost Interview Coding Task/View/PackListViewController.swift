@@ -199,6 +199,7 @@ extension PackListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
+        cell.selectionStyle = .none
         cell.configure(pack: pack)
         
         return cell

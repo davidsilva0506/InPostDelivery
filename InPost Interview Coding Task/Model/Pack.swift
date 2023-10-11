@@ -24,8 +24,10 @@ import Foundation
  * 13. PICKUP_TIME_EXPIRED
  */
 
+import RealmSwift
+
 enum PackStatus: String {
-    
+
     case created = "CREATED"
     case confirmed = "CONFIRMED"
     case adoptedAtSourceBranch = "ADOPTED_AT_SOURCE_BRANCH"
@@ -39,15 +41,26 @@ enum PackStatus: String {
     case outForDelivery = "OUT_FOR_DELIVERY"
     case readyToPickUp = "READY_TO_PICKUP"
     case pickUpTimeExpired = "PICKUP_TIME_EXPIRED"
+    case notReady = "NOT_READY"
+    case unknown
 }
 
-struct Pack: Codable {
+extension PackStatus: Codable {
     
-    let id: String
-    let status: String
-    let sender: String
-    let expiryDate: Date?
-    let pickupDate: Date?
-    let storedDate: Date?
-    let shipmentType: String
+    public init(from decoder: Decoder) throws {
+        
+        self = try PackStatus(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
+    }
+}
+
+@objcMembers
+class Pack: Object, Codable {
+    
+    dynamic var id: String = ""
+    dynamic var status: PackStatus = .unknown
+    dynamic var sender: String = ""
+    dynamic var expiryDate: Date? = nil
+    dynamic var pickupDate: Date? = nil
+    dynamic var storedDate: Date? = nil
+    dynamic var shipmentType: String = ""
 }
