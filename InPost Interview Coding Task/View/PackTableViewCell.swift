@@ -37,7 +37,7 @@ class PackTableViewCell: UITableViewCell {
 
 // MARK: - Cell Configure
 extension PackTableViewCell {
-    
+
     func configure(pack: Pack) {
         
         self.packNumberTitleLabel.text = "NR PRZESYŁKI"

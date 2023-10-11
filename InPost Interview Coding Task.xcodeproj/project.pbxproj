@@ -13,8 +13,13 @@
 		3039B53C2AD6DCDD00D7E915 /* OverlayActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B53B2AD6DCDD00D7E915 /* OverlayActivityView.swift */; };
 		3039B53E2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B53D2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift */; };
 		3039B5402AD6E45D00D7E915 /* PackStatus+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B53F2AD6E45D00D7E915 /* PackStatus+Helper.swift */; };
-		30963D0E2AD403FB00898F8A /* NetworkingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0D2AD403FB00898F8A /* NetworkingLayer.swift */; };
-		30963D102AD4042B00898F8A /* NetworkingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */; };
+		3039B5472AD7311000D7E915 /* PersistanceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5462AD7311000D7E915 /* PersistanceLayer.swift */; };
+		3039B54A2AD73DB800D7E915 /* PackPersistanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5492AD73DB800D7E915 /* PackPersistanceProvider.swift */; };
+		3039B54C2AD73E0900D7E915 /* PersistanceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B54B2AD73E0900D7E915 /* PersistanceProtocol.swift */; };
+		3039B54F2AD73EA400D7E915 /* PersistanceServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B54E2AD73EA400D7E915 /* PersistanceServiceLayer.swift */; };
+		3039B5522AD73F9E00D7E915 /* PersistedPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5512AD73F9E00D7E915 /* PersistedPack.swift */; };
+		30963D0E2AD403FB00898F8A /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0D2AD403FB00898F8A /* NetworkLayer.swift */; };
+		30963D102AD4042B00898F8A /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0F2AD4042B00898F8A /* NetworkConfig.swift */; };
 		30963D132AD4047200898F8A /* PackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D122AD4047200898F8A /* PackRequest.swift */; };
 		30963D152AD4049A00898F8A /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D142AD4049900898F8A /* RequestProtocol.swift */; };
 		30963D182AD405D100898F8A /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D172AD405D100898F8A /* ServiceProtocol.swift */; };
@@ -67,8 +72,13 @@
 		3039B53B2AD6DCDD00D7E915 /* OverlayActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayActivityView.swift; sourceTree = "<group>"; };
 		3039B53D2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityOverlay.swift"; sourceTree = "<group>"; };
 		3039B53F2AD6E45D00D7E915 /* PackStatus+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PackStatus+Helper.swift"; sourceTree = "<group>"; };
-		30963D0D2AD403FB00898F8A /* NetworkingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLayer.swift; sourceTree = "<group>"; };
-		30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConfig.swift; sourceTree = "<group>"; };
+		3039B5462AD7311000D7E915 /* PersistanceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceLayer.swift; sourceTree = "<group>"; };
+		3039B5492AD73DB800D7E915 /* PackPersistanceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackPersistanceProvider.swift; sourceTree = "<group>"; };
+		3039B54B2AD73E0900D7E915 /* PersistanceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceProtocol.swift; sourceTree = "<group>"; };
+		3039B54E2AD73EA400D7E915 /* PersistanceServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceServiceLayer.swift; sourceTree = "<group>"; };
+		3039B5512AD73F9E00D7E915 /* PersistedPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedPack.swift; sourceTree = "<group>"; };
+		30963D0D2AD403FB00898F8A /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		30963D0F2AD4042B00898F8A /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		30963D122AD4047200898F8A /* PackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackRequest.swift; sourceTree = "<group>"; };
 		30963D142AD4049900898F8A /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		30963D172AD405D100898F8A /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
@@ -137,6 +147,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3039B5452AD7306800D7E915 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				3039B5502AD73F8200D7E915 /* PersistedModels */,
+				3039B5462AD7311000D7E915 /* PersistanceLayer.swift */,
+				3039B54D2AD73E6000D7E915 /* PersistanceService */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		3039B5482AD73DA300D7E915 /* PersistanceProviders */ = {
+			isa = PBXGroup;
+			children = (
+				3039B5492AD73DB800D7E915 /* PackPersistanceProvider.swift */,
+			);
+			path = PersistanceProviders;
+			sourceTree = "<group>";
+		};
+		3039B54D2AD73E6000D7E915 /* PersistanceService */ = {
+			isa = PBXGroup;
+			children = (
+				3039B5482AD73DA300D7E915 /* PersistanceProviders */,
+				3039B54B2AD73E0900D7E915 /* PersistanceProtocol.swift */,
+				3039B54E2AD73EA400D7E915 /* PersistanceServiceLayer.swift */,
+			);
+			path = PersistanceService;
+			sourceTree = "<group>";
+		};
+		3039B5502AD73F8200D7E915 /* PersistedModels */ = {
+			isa = PBXGroup;
+			children = (
+				3039B5512AD73F9E00D7E915 /* PersistedPack.swift */,
+			);
+			path = PersistedModels;
+			sourceTree = "<group>";
+		};
 		30963D112AD4045500898F8A /* Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +309,7 @@
 			children = (
 				D671D9872913E649001FA9D5 /* App */,
 				D671D9952915110C001FA9D5 /* Networking */,
+				3039B5452AD7306800D7E915 /* Persistance */,
 				30963D222AD4383100898F8A /* Navigation */,
 				D671D98D2913F297001FA9D5 /* Model */,
 				30963D202AD4379E00898F8A /* View */,
@@ -322,8 +369,8 @@
 		D671D9952915110C001FA9D5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				30963D0D2AD403FB00898F8A /* NetworkingLayer.swift */,
-				30963D0F2AD4042B00898F8A /* NetworkingConfig.swift */,
+				30963D0D2AD403FB00898F8A /* NetworkLayer.swift */,
+				30963D0F2AD4042B00898F8A /* NetworkConfig.swift */,
 				30963D162AD405B300898F8A /* Service */,
 				30963D112AD4045500898F8A /* Requests */,
 				D671D99929151360001FA9D5 /* Mock */,
@@ -588,6 +635,7 @@
 				3039B53E2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift in Sources */,
 				30963D702AD451B000898F8A /* PackTableViewCell.swift in Sources */,
 				3039B5402AD6E45D00D7E915 /* PackStatus+Helper.swift in Sources */,
+				3039B5522AD73F9E00D7E915 /* PersistedPack.swift in Sources */,
 				30963D1C2AD40BA300898F8A /* PackProvider.swift in Sources */,
 				3039B53C2AD6DCDD00D7E915 /* OverlayActivityView.swift in Sources */,
 				30963D132AD4047200898F8A /* PackRequest.swift in Sources */,
@@ -598,14 +646,18 @@
 				3039B5342AD6A8FA00D7E915 /* PackListViewModel.swift in Sources */,
 				30963D6B2AD44A6900898F8A /* SceneDelegate.swift in Sources */,
 				D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */,
+				3039B54F2AD73EA400D7E915 /* PersistanceServiceLayer.swift in Sources */,
+				3039B5472AD7311000D7E915 /* PersistanceLayer.swift in Sources */,
 				3039B5362AD6B3BC00D7E915 /* Collection+Safe.swift in Sources */,
 				D671D9912913F79B001FA9D5 /* PackView.swift in Sources */,
 				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
 				30963D1A2AD406A700898F8A /* ServiceLayer.swift in Sources */,
-				30963D0E2AD403FB00898F8A /* NetworkingLayer.swift in Sources */,
+				30963D0E2AD403FB00898F8A /* NetworkLayer.swift in Sources */,
+				3039B54A2AD73DB800D7E915 /* PackPersistanceProvider.swift in Sources */,
 				30963D1F2AD40D3100898F8A /* Core.swift in Sources */,
-				30963D102AD4042B00898F8A /* NetworkingConfig.swift in Sources */,
+				30963D102AD4042B00898F8A /* NetworkConfig.swift in Sources */,
 				30963D152AD4049A00898F8A /* RequestProtocol.swift in Sources */,
+				3039B54C2AD73E0900D7E915 /* PersistanceProtocol.swift in Sources */,
 				30963D182AD405D100898F8A /* ServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  NetworkingLayer.swift
+//  NetworkLayer.swift
 //  InPost Interview Coding Task
 //
 //  Created by David Silva on 09/10/2023.

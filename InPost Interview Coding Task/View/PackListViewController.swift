@@ -119,6 +119,7 @@ private extension PackListViewController {
             self.hideActivityOverlay()
             self.refreshControl.endRefreshing()
             self.tableView.reloadData()
+            try? self.viewModel.fetchPersistedPacks()
 
         case .error(let error):
     
@@ -140,6 +141,31 @@ private extension PackListViewController {
 // MARK: - UITableViewDelegate
 extension PackListViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+    
+        return "Archive"
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+       
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard let packs = self.viewModel.packs[safe: indexPath.section],
+                let _ = packs[safe: indexPath.row] else {
+
+            assertionFailure("IndexPath out of bounds")
+            return
+        }
+        
+        if editingStyle == .delete {
+            
+            self.viewModel.packs[indexPath.section].remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource

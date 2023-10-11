@@ -23,15 +23,16 @@ final class PackListViewModel: NSObject {
 
     // MARK: - Properties
     private unowned let provider: PackProvider
+    private unowned let persistanceProvider: PackPersistanceProvider
     
     private var realm: Realm?
     private(set) var currentState = PassthroughSubject<PackState, Never>()
-    private(set) var packs: [[Pack]] = []
+    var packs: [[Pack]] = []
 
-    init(provider: PackProvider, realm: Realm?) {
+    init(provider: PackProvider, persistanceProvider: PackPersistanceProvider) {
 
         self.provider = provider
-        self.realm = realm
+        self.persistanceProvider = persistanceProvider
     }
 }
 
@@ -52,6 +53,7 @@ extension PackListViewModel {
             do {
                 
                 let packs = try await self.provider.fetchPacks()
+                //_ = try packs.map { try self.savePack($0) }
 
                 self.packs = self.groupPacks(packs)
                 
@@ -61,6 +63,35 @@ extension PackListViewModel {
                 
                 self.currentState.send(.error(error))
             }
+        }
+    }
+    
+    func savePack(_ pack: Pack) throws {
+            
+        do {
+            
+            try self.persistanceProvider.savePack(pack)
+
+        } catch {
+            
+            throw error
+        }
+    }
+    
+    func fetchPersistedPacks() throws {
+        
+        do {
+            
+            let packs = try self.persistanceProvider.fetchPacks()
+            
+            packs.forEach { pack in
+                
+                print(pack.id)
+            }
+
+        } catch {
+            
+            throw error
         }
     }
 }

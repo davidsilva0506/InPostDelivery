@@ -45,12 +45,14 @@ extension SceneDelegate {
                                    baseURL: Constants.baseURL)
 
         let network = NetworkLayer(networkConfig: config)
-        
         let service = ServiceLayer(network: network)
+        let persistance = PersistanceLayer()
+        let persistanceService = PersistanceServiceLayer(persistance: persistance)
             
-        let realm = try? Realm()
-            
-        self.core = Core(network: network, service: service, realm: realm)
+        self.core = Core(network: network,
+                         service: service,
+                         persistance: persistance,
+                         persistanceService: persistanceService)
     }
     
     private func rootViewController() -> UINavigationController {
@@ -61,7 +63,7 @@ extension SceneDelegate {
             return UINavigationController()
         }
         
-        let packListViewModel = PackListViewModel(provider: core.service, realm: core.realm)
+        let packListViewModel = PackListViewModel(provider: core.service, persistanceProvider: core.persistanceService)
         let packListViewController = PackListViewController(viewModel: packListViewModel)
         
         return IPNavigationController(rootViewController: packListViewController)

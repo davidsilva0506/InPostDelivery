@@ -12,13 +12,18 @@ final class Core: NSObject {
     
     let network: NetworkLayer
     let service: ServiceLayer
-    var realm: Realm?
+    let persistance: PersistanceLayer
+    let persistanceService: PersistanceServiceLayer
 
-    init(network: NetworkLayer, service: ServiceLayer, realm: Realm?) {
+    init(network: NetworkLayer,
+         service: ServiceLayer,
+         persistance: PersistanceLayer,
+         persistanceService: PersistanceServiceLayer) {
         
         self.network = network
         self.service = service
-        self.realm = realm
+        self.persistance = persistance
+        self.persistanceService = persistanceService
 
         super.init()
     }
