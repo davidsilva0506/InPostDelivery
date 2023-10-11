@@ -74,7 +74,7 @@ class PackListViewController: UIViewController {
     
     @objc private func refresh(_ sender: Any) {
         
-        self.viewModel.fetchPacks()
+        self.viewModel.fetchPacks(refreshing: true)
     }
 }
 
@@ -84,8 +84,9 @@ private extension PackListViewController {
     func bindToViewModel() {
         
         self.viewModel.currentState.receive(on: DispatchQueue.main).sink { state in
-
+            
             self.configureUI(for: state)
+            
         }.store(in: &self.observers)
     }
 }
@@ -114,26 +115,21 @@ private extension PackListViewController {
         switch state {
 
         case .loaded:
-
+             
             self.hideActivityOverlay()
             self.refreshControl.endRefreshing()
             self.tableView.reloadData()
 
         case .error(let error):
+    
             self.hideActivityOverlay()
+            self.refreshControl.endRefreshing()
             self.handleError(error)
 
         case .loading:
+
             self.showActivityOverlay()
         }
-    }
-    
-    func showActivityOverlay() {
-        
-    }
-    
-    func hideActivityOverlay() {
-        
     }
     
     func handleError(_ error: Error) {

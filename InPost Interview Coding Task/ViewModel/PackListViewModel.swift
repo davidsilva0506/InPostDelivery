@@ -35,13 +35,16 @@ final class PackListViewModel: NSObject {
 // MARK: - Requests
 extension PackListViewModel {
 
-    func fetchPacks() {
+    func fetchPacks(refreshing: Bool = false) {
 
         Task { [weak self] in
 
             guard let self else { return }
 
-            self.currentState.send(.loading)
+            if refreshing == false {
+                
+                self.currentState.send(.loading)
+            }
 
             do {
                 
@@ -50,9 +53,6 @@ extension PackListViewModel {
                 self.packs = self.groupPacks(packs)
                 
                 self.currentState.send(.loaded)
-                    
-                    //self.refreshControl.endRefreshing()
-                    //self.tableView.reloadData()
                 
             } catch {
                 
