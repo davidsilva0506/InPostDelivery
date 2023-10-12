@@ -7,20 +7,20 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3245DB45-98BE-4AC2-B70D-DECB58310AFE"
+            uuid = "9D7BBCF7-7EA8-4D62-AACB-06EC58CFAF72"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InPost Interview Coding Task/View/PackListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "configureUI(for:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3245DB45-98BE-4AC2-B70D-DECB58310AFE - 718760ec94263bd0"
+                  uuid = "9D7BBCF7-7EA8-4D62-AACB-06EC58CFAF72 - 718760ec942625c0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,12 +30,12 @@
                   urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/View/PackListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "129"
-                  endingLineNumber = "129"
-                  offsetFromSymbolStart = "336">
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "348">
                </Location>
                <Location
-                  uuid = "3245DB45-98BE-4AC2-B70D-DECB58310AFE - 718760ec94263816"
+                  uuid = "9D7BBCF7-7EA8-4D62-AACB-06EC58CFAF72 - 718760ec94263a44"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,9 +45,24 @@
                   urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/View/PackListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "127"
-                  endingLineNumber = "127"
-                  offsetFromSymbolStart = "336">
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "348">
+               </Location>
+               <Location
+                  uuid = "9D7BBCF7-7EA8-4D62-AACB-06EC58CFAF72 - 718760ec94263a44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InPost_Interview_Coding_Task.PackListViewController.configureUI(for: InPost_Interview_Coding_Task.PackState) -&gt; ()"
+                  moduleName = "InPost Interview Coding Task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/View/PackListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "244">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -55,20 +70,20 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "57E11467-6B63-4E11-B49A-2C3979DFEC8D"
+            uuid = "716C16E4-8638-4E0D-AADF-BD85C2EFBAF1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InPost Interview Coding Task/View/PackListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "configureUI(for:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "57E11467-6B63-4E11-B49A-2C3979DFEC8D - 718760ec94263b0e"
+                  uuid = "716C16E4-8638-4E0D-AADF-BD85C2EFBAF1 - 718760ec9426249b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -78,12 +93,12 @@
                   urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/View/PackListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "412">
+                  startingLineNumber = "154"
+                  endingLineNumber = "154"
+                  offsetFromSymbolStart = "564">
                </Location>
                <Location
-                  uuid = "57E11467-6B63-4E11-B49A-2C3979DFEC8D - 718760ec94263b4c"
+                  uuid = "716C16E4-8638-4E0D-AADF-BD85C2EFBAF1 - 718760ec9426251f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -93,9 +108,24 @@
                   urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/View/PackListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "133"
-                  endingLineNumber = "133"
-                  offsetFromSymbolStart = "412">
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
+                  offsetFromSymbolStart = "564">
+               </Location>
+               <Location
+                  uuid = "716C16E4-8638-4E0D-AADF-BD85C2EFBAF1 - 718760ec9426251f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InPost_Interview_Coding_Task.PackListViewController.configureUI(for: InPost_Interview_Coding_Task.PackState) -&gt; ()"
+                  moduleName = "InPost Interview Coding Task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/View/PackListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
+                  offsetFromSymbolStart = "448">
                </Location>
             </Locations>
          </BreakpointContent>

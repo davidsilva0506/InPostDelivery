@@ -44,6 +44,15 @@ class PackListViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var emptyView: EmptyView = {
+       
+        let emptyView = EmptyView()
+        
+        emptyView.isHidden = true
+        
+        return emptyView
+    }()
+    
     // MARK: - Lifecycle
     init(viewModel: PackListViewModel) {
 
@@ -72,16 +81,14 @@ class PackListViewController: UIViewController {
         Task {
          
             await self.viewModel.fetchAndPersistPacks()
-            await self.viewModel.retrievePacks()
         }
     }
     
     @objc private func refresh(_ sender: Any) {
-        
+
         Task {
-         
+
             await self.viewModel.fetchAndPersistPacks(refreshing: true)
-            await self.viewModel.retrievePacks()
         }
     }
 }
@@ -104,17 +111,20 @@ private extension PackListViewController {
     
     func addSubviews() {
         
-        self.view.addSubview(self.tableView)
+        self.view.add(self.tableView, self.emptyView)
     }
     
     func configureSubviews() {
         
         self.tableView.register(PackTableViewCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
         self.tableView.addSubview(self.refreshControl)
+        
+        self.emptyView.configure(title: "ai meu deus os packs???", message: "olha, foram à vida deles")
     }
     
     func defineSubviewConstraints() {
 
+        self.emptyView.pin(to: self.view)
         self.tableView.pin(to: self.view)
     }
     
@@ -122,19 +132,27 @@ private extension PackListViewController {
 
         switch state {
 
-        case .loaded:
-             
-            self.hideActivityOverlay()
-            self.refreshControl.endRefreshing()
-            self.tableView.reloadData()
-
         case .loading:
 
             self.showActivityOverlay()
             
-        case .archiveCompleted(let indexPath):
+        case .loaded:
+             
+            self.emptyView.isHidden = true
+            self.tableView.isHidden = false
+            self.hideActivityOverlay()
+            self.refreshControl.endRefreshing()
+            self.tableView.reloadData()
             
-            self.viewModel.packs[indexPath.section].remove(at: indexPath.row)
+        case .empty:
+            
+            self.tableView.isHidden = true
+            self.emptyView.isHidden = false
+            self.hideActivityOverlay()
+            self.refreshControl.endRefreshing()
+            
+        case .archiveCompleted(let indexPath):
+
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             
         case .error(let error):
@@ -197,7 +215,7 @@ extension PackListViewController: UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        
+
         return self.viewModel.packs.count
     }
     
@@ -208,7 +226,14 @@ extension PackListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 
-        return UITableView.automaticDimension
+        switch section {
+            case 0:
+                return self.viewModel.packs[safe: section]?.count ?? 0 > 0 ? UITableView.automaticDimension : 0
+            case 1:
+                return self.viewModel.packs[safe: section]?.count ?? 0 > 0 ? UITableView.automaticDimension : 0
+            default:
+                return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

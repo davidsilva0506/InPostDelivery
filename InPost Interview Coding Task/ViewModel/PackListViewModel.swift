@@ -14,6 +14,7 @@ enum PackState {
     case loading
     case loaded
     case archiveCompleted(IndexPath)
+    case empty
     case error(Error)
 }
 
@@ -54,7 +55,8 @@ extension PackListViewModel {
             do {
                 
                 let packs = try await self.provider.fetchPacks()
-                self.savePacks(packs)
+                await self.updatePersistedPacks(packs)
+                await self.retrievePacks()
                 
             } catch {
                 
@@ -63,33 +65,19 @@ extension PackListViewModel {
         }
     }
     
-    func retrievePacks() async {
-        
-        do {
-            
-            let packs = try self.persistanceProvider.fetchPacks()
-            
-            packs.forEach { pack in
-                
-                print(pack.id)
-                print(pack.isArchived)
-            }
-            
-            self.packs = self.groupPacks(packs.filter { $0.isArchived ?? false == false })
-            self.currentState.send(.loaded)
-
-        } catch {
-            
-            self.currentState.send(.error(error))
-        }
-    }
-    
     func archive(_ pack: Pack, indexPath: IndexPath) {
         
         do {
             
             try self.persistanceProvider.archivePack(pack)
+            self.packs[indexPath.section].remove(at: indexPath.row)
+
             self.currentState.send(.archiveCompleted(indexPath))
+            
+            if self.packs.joined().count == 0 {
+                
+                self.currentState.send(.empty)
+            }
             
         } catch {
             
@@ -101,7 +89,29 @@ extension PackListViewModel {
 // MARK: - Helpers
 private extension PackListViewModel {
     
-    func savePacks(_ packs: [Pack]) {
+    func retrievePacks() async {
+
+        do {
+
+            let packs = try self.persistanceProvider.fetchPacks()
+
+            packs.forEach { pack in
+
+                print(pack.id)
+                print(pack.isArchived)
+            }
+
+            self.packs = self.groupPacks(packs.filter { $0.isArchived ?? false == false })
+            
+            self.packs.joined().count > 0 ? self.currentState.send(.loaded) : self.currentState.send(.empty)
+
+        } catch {
+
+            self.currentState.send(.error(error))
+        }
+    }
+
+    func updatePersistedPacks(_ packs: [Pack]) async {
         
         packs.forEach { pack in
             
