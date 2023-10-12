@@ -10,7 +10,7 @@ import RealmSwift
 
 class PersistedPack: Object {
 
-    @Persisted var id: String = ""
+    @Persisted(primaryKey: true) var id: String = ""
     @Persisted var status: String = ""
     @Persisted var sender: String = ""
     @Persisted var expiryDate: Date? = nil

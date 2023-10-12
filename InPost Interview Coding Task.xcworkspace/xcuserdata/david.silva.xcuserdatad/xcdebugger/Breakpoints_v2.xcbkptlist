@@ -3,4 +3,54 @@
    uuid = "DE11379A-3A3F-4CEE-8952-0AE14AB93CD1"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C366FA38-7C8A-4F14-B9D3-37B69AD3107F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InPost Interview Coding Task/Persistance/PersistanceService/PersistanceServiceLayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "savePack(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C366FA38-7C8A-4F14-B9D3-37B69AD3107F - f99b894f4a8bed6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InPost_Interview_Coding_Task.PersistanceServiceLayer.savePack(InPost_Interview_Coding_Task.Pack) throws -&gt; ()"
+                  moduleName = "InPost Interview Coding Task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/Persistance/PersistanceService/PersistanceServiceLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "C366FA38-7C8A-4F14-B9D3-37B69AD3107F - f99b894f4a8bed6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InPost_Interview_Coding_Task.PersistanceServiceLayer.savePack(InPost_Interview_Coding_Task.Pack) throws -&gt; ()"
+                  moduleName = "InPost Interview Coding Task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/Persistance/PersistanceService/PersistanceServiceLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -10,6 +10,7 @@ import RealmSwift
 
 public enum PersistanceError: Error {
 
+    case noRealm
     case operationFailed
 }
 
@@ -21,19 +22,19 @@ public protocol PersistanceLayerProtocol: AnyObject {
 
 class PersistanceLayer: PersistanceLayerProtocol {
 
-    @MainActor
     func save(_ object: Object) throws {
          
         guard let realm = try? Realm() else {
-            
-            throw PersistanceError.operationFailed
+
+            throw PersistanceError.noRealm
         }
-            
+        
         do {
 
-            realm.beginWrite()
-            realm.add(object)
-            try realm.commitWrite()
+            try realm.write {
+                
+                realm.add(object, update: .modified)
+             }
             
         } catch {
             
@@ -41,7 +42,6 @@ class PersistanceLayer: PersistanceLayerProtocol {
         }
     }
     
-    @MainActor
     func fetch<T: Object>(_ type: T.Type) throws -> Results<T> {
         
         guard let realm = try? Realm() else {

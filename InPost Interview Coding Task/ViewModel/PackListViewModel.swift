@@ -53,7 +53,18 @@ extension PackListViewModel {
             do {
                 
                 let packs = try await self.provider.fetchPacks()
-                //_ = try packs.map { try self.savePack($0) }
+                
+                packs.forEach { pack in
+                    
+                    do {
+                        
+                        try self.savePack(pack)
+                        
+                    } catch {
+                        
+                        print(error)
+                    }
+                }
 
                 self.packs = self.groupPacks(packs)
                 
