@@ -69,12 +69,20 @@ class PackListViewController: UIViewController {
         
         self.bindToViewModel()
         
-        self.viewModel.fetchPacks()
+        Task {
+         
+            await self.viewModel.fetchAndPersistPacks()
+            await self.viewModel.retrievePacks()
+        }
     }
     
     @objc private func refresh(_ sender: Any) {
         
-        self.viewModel.fetchPacks(refreshing: true)
+        Task {
+         
+            await self.viewModel.fetchAndPersistPacks(refreshing: true)
+            await self.viewModel.retrievePacks()
+        }
     }
 }
 
@@ -119,17 +127,21 @@ private extension PackListViewController {
             self.hideActivityOverlay()
             self.refreshControl.endRefreshing()
             self.tableView.reloadData()
-            try? self.viewModel.fetchPersistedPacks()
 
+        case .loading:
+
+            self.showActivityOverlay()
+            
+        case .archiveCompleted(let indexPath):
+            
+            self.viewModel.packs[indexPath.section].remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            
         case .error(let error):
     
             self.hideActivityOverlay()
             self.refreshControl.endRefreshing()
             self.handleError(error)
-
-        case .loading:
-
-            self.showActivityOverlay()
         }
     }
     
@@ -154,16 +166,15 @@ extension PackListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         guard let packs = self.viewModel.packs[safe: indexPath.section],
-                let _ = packs[safe: indexPath.row] else {
+                let pack = packs[safe: indexPath.row] else {
 
             assertionFailure("IndexPath out of bounds")
             return
         }
         
         if editingStyle == .delete {
-            
-            self.viewModel.packs[indexPath.section].remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+                
+            self.viewModel.archive(pack, indexPath: indexPath)
         }
     }
 }
@@ -191,7 +202,7 @@ extension PackListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
+
         return PackListViewControllerSection(rawValue: section)?.headerTitle()
     }
 

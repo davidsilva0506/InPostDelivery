@@ -13,6 +13,7 @@ enum PackState {
 
     case loading
     case loaded
+    case archiveCompleted(IndexPath)
     case error(Error)
 }
 
@@ -36,10 +37,10 @@ final class PackListViewModel: NSObject {
     }
 }
 
-// MARK: - Requests
+// MARK: - Public
 extension PackListViewModel {
 
-    func fetchPacks(refreshing: Bool = false) {
+    func fetchAndPersistPacks(refreshing: Bool = false) async {
 
         Task { [weak self] in
 
@@ -53,22 +54,7 @@ extension PackListViewModel {
             do {
                 
                 let packs = try await self.provider.fetchPacks()
-                
-                packs.forEach { pack in
-                    
-                    do {
-                        
-                        try self.savePack(pack)
-                        
-                    } catch {
-                        
-                        print(error)
-                    }
-                }
-
-                self.packs = self.groupPacks(packs)
-                
-                self.currentState.send(.loaded)
+                self.savePacks(packs)
                 
             } catch {
                 
@@ -77,19 +63,7 @@ extension PackListViewModel {
         }
     }
     
-    func savePack(_ pack: Pack) throws {
-            
-        do {
-            
-            try self.persistanceProvider.savePack(pack)
-
-        } catch {
-            
-            throw error
-        }
-    }
-    
-    func fetchPersistedPacks() throws {
+    func retrievePacks() async {
         
         do {
             
@@ -98,17 +72,49 @@ extension PackListViewModel {
             packs.forEach { pack in
                 
                 print(pack.id)
+                print(pack.isArchived)
             }
+            
+            self.packs = self.groupPacks(packs.filter { $0.isArchived ?? false == false })
+            self.currentState.send(.loaded)
 
         } catch {
             
-            throw error
+            self.currentState.send(.error(error))
+        }
+    }
+    
+    func archive(_ pack: Pack, indexPath: IndexPath) {
+        
+        do {
+            
+            try self.persistanceProvider.archivePack(pack)
+            self.currentState.send(.archiveCompleted(indexPath))
+            
+        } catch {
+            
+            self.currentState.send(.error(error))
         }
     }
 }
 
 // MARK: - Helpers
 private extension PackListViewModel {
+    
+    func savePacks(_ packs: [Pack]) {
+        
+        packs.forEach { pack in
+            
+            do {
+                
+                try self.persistanceProvider.savePack(pack)
+                
+            } catch {
+                
+                print(error)
+            }
+        }
+    }
  
     func groupPacks(_ packs: [Pack]) -> [[Pack]] {
 

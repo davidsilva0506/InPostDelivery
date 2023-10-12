@@ -15,10 +15,30 @@ final class PersistanceServiceLayer: PersistanceProtocol, PackPersistanceProvide
 
         self.persistance = persistance
     }
+    
+    func archivePack(_ pack: Pack) throws {
+        
+        let object = self.mapToObject(pack)
+        object.isArchived = true
+        
+        do {
+            
+            try self.persistance.save(object)
+            
+        } catch {
+            
+            throw error
+        }
+    }
 
     func savePack(_ pack: Pack) throws {
         
         let object = self.mapToObject(pack)
+        
+        if let persistedObject = try? self.persistance.fetch(PersistedPack.self, primaryKey: object.id) {
+            
+            object.isArchived = persistedObject.isArchived
+        }
         
         do {
             
@@ -59,6 +79,11 @@ private extension PersistanceServiceLayer {
         persistedPack.storedDate = pack.storedDate
         persistedPack.shipmentType = pack.shipmentType
         
+        if let isArchived = pack.isArchived {
+            
+            persistedPack.isArchived = isArchived
+        }
+        
         return persistedPack
     }
     
@@ -70,7 +95,8 @@ private extension PersistanceServiceLayer {
                         expiryDate: persistedPack.expiryDate,
                         pickupDate: persistedPack.pickupDate,
                         storedDate: persistedPack.storedDate,
-                        shipmentType: persistedPack.shipmentType)
+                        shipmentType: persistedPack.shipmentType,
+                        isArchived: persistedPack.isArchived)
         
         return pack
     }

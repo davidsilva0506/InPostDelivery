@@ -9,6 +9,7 @@ import Foundation
 
 protocol PackPersistanceProvider: AnyObject {
 
+    func archivePack(_ pack: Pack) throws
     func savePack(_ pack: Pack) throws
     func fetchPacks() throws -> [Pack]
 }

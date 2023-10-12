@@ -60,4 +60,20 @@ struct Pack: Codable {
     let pickupDate: Date?
     let storedDate: Date?
     let shipmentType: String
+    
+    var isArchived: Bool?
+}
+
+extension Pack {
+    
+    private enum CodingKeys: String, CodingKey {
+        
+        case id
+        case status
+        case sender
+        case expiryDate
+        case pickupDate
+        case storedDate
+        case shipmentType
+    }
 }
