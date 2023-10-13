@@ -24,7 +24,7 @@ extension PackTableViewCell {
         self.packSenderLabel.text = pack.sender
         
         if pack.status == .delivered || pack.status == .confirmed,
-            let date = pack.pickupDate {
+            let date = pack.pickUpDate {
             
             self.packDateTitleLabel.text = "ODEBRANA"
             

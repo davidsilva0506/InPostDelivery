@@ -136,13 +136,13 @@ private extension PackListViewModel {
         return packs.sorted {
             
             ($0.status.order,
-             $0.pickupDate ?? Date.distantFuture,
+             $0.pickUpDate ?? Date.distantFuture,
              $0.expiryDate ?? Date.distantFuture,
              $0.storedDate ?? Date.distantFuture,
              $0.id)
             <
             ($1.status.order,
-             $1.pickupDate ?? Date.distantFuture,
+             $1.pickUpDate ?? Date.distantFuture,
              $1.expiryDate ?? Date.distantFuture,
              $1.storedDate ?? Date.distantFuture,
              $1.id)

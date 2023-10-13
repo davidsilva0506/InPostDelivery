@@ -13,7 +13,7 @@ struct Pack: Codable {
     let status: PackStatus
     let sender: String
     let expiryDate: Date?
-    let pickupDate: Date?
+    let pickUpDate: Date?
     let storedDate: Date?
     let shipmentType: ShipmentType
     
@@ -28,7 +28,7 @@ extension Pack {
         case status
         case sender
         case expiryDate
-        case pickupDate
+        case pickUpDate
         case storedDate
         case shipmentType
     }

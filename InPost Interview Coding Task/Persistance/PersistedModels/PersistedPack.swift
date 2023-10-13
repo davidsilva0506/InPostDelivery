@@ -14,7 +14,7 @@ class PersistedPack: Object {
     @Persisted var status: String = ""
     @Persisted var sender: String = ""
     @Persisted var expiryDate: Date? = nil
-    @Persisted var pickupDate: Date? = nil
+    @Persisted var pickUpDate: Date? = nil
     @Persisted var storedDate: Date? = nil
     @Persisted var shipmentType: String = ""
     @Persisted var isArchived: Bool? = nil

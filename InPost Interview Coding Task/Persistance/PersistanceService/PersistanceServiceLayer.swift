@@ -75,7 +75,7 @@ private extension PersistanceServiceLayer {
         persistedPack.status = pack.status.rawValue
         persistedPack.sender = pack.sender
         persistedPack.expiryDate = pack.expiryDate
-        persistedPack.pickupDate = pack.pickupDate
+        persistedPack.pickUpDate = pack.pickUpDate
         persistedPack.storedDate = pack.storedDate
         persistedPack.shipmentType = pack.shipmentType.rawValue
         
@@ -93,7 +93,7 @@ private extension PersistanceServiceLayer {
                         status: PackStatus(rawValue: persistedPack.status) ?? .unknown,
                         sender: persistedPack.sender,
                         expiryDate: persistedPack.expiryDate,
-                        pickupDate: persistedPack.pickupDate,
+                        pickUpDate: persistedPack.pickUpDate,
                         storedDate: persistedPack.storedDate,
                         shipmentType: ShipmentType(rawValue: persistedPack.shipmentType) ?? .unknown,
                         isArchived: persistedPack.isArchived)
