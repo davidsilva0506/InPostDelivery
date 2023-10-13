@@ -95,12 +95,6 @@ private extension PackListViewModel {
 
             let packs = try self.persistanceProvider.fetchPacks()
 
-            packs.forEach { pack in
-
-                print(pack.id)
-                print(pack.isArchived)
-            }
-
             self.packs = self.groupPacks(packs.filter { $0.isArchived ?? false == false })
             
             self.packs.joined().count > 0 ? self.currentState.send(.loaded) : self.currentState.send(.empty)

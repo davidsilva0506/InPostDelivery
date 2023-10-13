@@ -77,7 +77,7 @@ private extension PersistanceServiceLayer {
         persistedPack.expiryDate = pack.expiryDate
         persistedPack.pickupDate = pack.pickupDate
         persistedPack.storedDate = pack.storedDate
-        persistedPack.shipmentType = pack.shipmentType
+        persistedPack.shipmentType = pack.shipmentType.rawValue
         
         if let isArchived = pack.isArchived {
             
@@ -95,7 +95,7 @@ private extension PersistanceServiceLayer {
                         expiryDate: persistedPack.expiryDate,
                         pickupDate: persistedPack.pickupDate,
                         storedDate: persistedPack.storedDate,
-                        shipmentType: persistedPack.shipmentType,
+                        shipmentType: ShipmentType(rawValue: persistedPack.shipmentType) ?? .unknown,
                         isArchived: persistedPack.isArchived)
         
         return pack

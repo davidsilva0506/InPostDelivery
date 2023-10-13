@@ -19,6 +19,11 @@
 		3039B54F2AD73EA400D7E915 /* PersistanceServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B54E2AD73EA400D7E915 /* PersistanceServiceLayer.swift */; };
 		3039B5522AD73F9E00D7E915 /* PersistedPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5512AD73F9E00D7E915 /* PersistedPack.swift */; };
 		3039B5562AD80CDD00D7E915 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5552AD80CDD00D7E915 /* EmptyView.swift */; };
+		3039B5582AD890A600D7E915 /* PackTableViewCell+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5572AD890A600D7E915 /* PackTableViewCell+Configuration.swift */; };
+		3039B55A2AD8970900D7E915 /* PackStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5592AD8970900D7E915 /* PackStatus.swift */; };
+		3039B55C2AD8971600D7E915 /* ShipmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B55B2AD8971600D7E915 /* ShipmentType.swift */; };
+		3039B55E2AD8979F00D7E915 /* ShipmentType+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B55D2AD8979F00D7E915 /* ShipmentType+Helper.swift */; };
+		3039B5602AD8A44400D7E915 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B55F2AD8A44400D7E915 /* SectionHeaderView.swift */; };
 		30963D0E2AD403FB00898F8A /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0D2AD403FB00898F8A /* NetworkLayer.swift */; };
 		30963D102AD4042B00898F8A /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D0F2AD4042B00898F8A /* NetworkConfig.swift */; };
 		30963D132AD4047200898F8A /* PackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D122AD4047200898F8A /* PackRequest.swift */; };
@@ -79,6 +84,11 @@
 		3039B54E2AD73EA400D7E915 /* PersistanceServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceServiceLayer.swift; sourceTree = "<group>"; };
 		3039B5512AD73F9E00D7E915 /* PersistedPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedPack.swift; sourceTree = "<group>"; };
 		3039B5552AD80CDD00D7E915 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		3039B5572AD890A600D7E915 /* PackTableViewCell+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PackTableViewCell+Configuration.swift"; sourceTree = "<group>"; };
+		3039B5592AD8970900D7E915 /* PackStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackStatus.swift; sourceTree = "<group>"; };
+		3039B55B2AD8971600D7E915 /* ShipmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentType.swift; sourceTree = "<group>"; };
+		3039B55D2AD8979F00D7E915 /* ShipmentType+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShipmentType+Helper.swift"; sourceTree = "<group>"; };
+		3039B55F2AD8A44400D7E915 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		30963D0D2AD403FB00898F8A /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		30963D0F2AD4042B00898F8A /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		30963D122AD4047200898F8A /* PackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackRequest.swift; sourceTree = "<group>"; };
@@ -220,6 +230,8 @@
 				30963D6F2AD451B000898F8A /* PackTableViewCell.swift */,
 				3039B53B2AD6DCDD00D7E915 /* OverlayActivityView.swift */,
 				3039B5552AD80CDD00D7E915 /* EmptyView.swift */,
+				3039B5572AD890A600D7E915 /* PackTableViewCell+Configuration.swift */,
+				3039B55F2AD8A44400D7E915 /* SectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,7 +270,6 @@
 				30963D6D2AD4507400898F8A /* UIView+Helper.swift */,
 				3039B5352AD6B3BC00D7E915 /* Collection+Safe.swift */,
 				3039B53D2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift */,
-				3039B53F2AD6E45D00D7E915 /* PackStatus+Helper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,6 +367,10 @@
 			isa = PBXGroup;
 			children = (
 				D671D98E2913F2A1001FA9D5 /* Pack.swift */,
+				3039B5592AD8970900D7E915 /* PackStatus.swift */,
+				3039B55B2AD8971600D7E915 /* ShipmentType.swift */,
+				3039B53F2AD6E45D00D7E915 /* PackStatus+Helper.swift */,
+				3039B55D2AD8979F00D7E915 /* ShipmentType+Helper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -638,10 +653,13 @@
 				3039B53E2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift in Sources */,
 				30963D702AD451B000898F8A /* PackTableViewCell.swift in Sources */,
 				3039B5402AD6E45D00D7E915 /* PackStatus+Helper.swift in Sources */,
+				3039B5582AD890A600D7E915 /* PackTableViewCell+Configuration.swift in Sources */,
 				3039B5522AD73F9E00D7E915 /* PersistedPack.swift in Sources */,
 				30963D1C2AD40BA300898F8A /* PackProvider.swift in Sources */,
 				3039B53C2AD6DCDD00D7E915 /* OverlayActivityView.swift in Sources */,
 				3039B5562AD80CDD00D7E915 /* EmptyView.swift in Sources */,
+				3039B55A2AD8970900D7E915 /* PackStatus.swift in Sources */,
+				3039B55E2AD8979F00D7E915 /* ShipmentType+Helper.swift in Sources */,
 				30963D132AD4047200898F8A /* PackRequest.swift in Sources */,
 				30963D6E2AD4507400898F8A /* UIView+Helper.swift in Sources */,
 				D671D9972915111C001FA9D5 /* PackNetworking.swift in Sources */,
@@ -649,10 +667,12 @@
 				D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */,
 				3039B5342AD6A8FA00D7E915 /* PackListViewModel.swift in Sources */,
 				30963D6B2AD44A6900898F8A /* SceneDelegate.swift in Sources */,
+				3039B55C2AD8971600D7E915 /* ShipmentType.swift in Sources */,
 				D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */,
 				3039B54F2AD73EA400D7E915 /* PersistanceServiceLayer.swift in Sources */,
 				3039B5472AD7311000D7E915 /* PersistanceLayer.swift in Sources */,
 				3039B5362AD6B3BC00D7E915 /* Collection+Safe.swift in Sources */,
+				3039B5602AD8A44400D7E915 /* SectionHeaderView.swift in Sources */,
 				D671D9912913F79B001FA9D5 /* PackView.swift in Sources */,
 				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
 				30963D1A2AD406A700898F8A /* ServiceLayer.swift in Sources */,

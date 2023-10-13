@@ -32,7 +32,7 @@ class IPNavigationController: UINavigationController {
         appearance.titleTextAttributes = [
             .font: UIFont.systemFont(ofSize: Constants.fontSize, weight: .bold)
         ]
-        
+
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
     }

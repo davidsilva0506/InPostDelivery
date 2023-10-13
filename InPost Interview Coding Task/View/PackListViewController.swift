@@ -37,6 +37,8 @@ class PackListViewController: UIViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+        tableView.separatorStyle = .none
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -195,6 +197,12 @@ extension PackListViewController: UITableViewDelegate {
             self.viewModel.archive(pack, indexPath: indexPath)
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        cell.contentView.layer.masksToBounds = true
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: 0).cgPath
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -219,9 +227,13 @@ extension PackListViewController: UITableViewDataSource {
         return self.viewModel.packs.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-
-        return PackListViewControllerSection(rawValue: section)?.headerTitle()
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = SectionHeaderView()
+        let title = PackListViewControllerSection(rawValue: section)?.headerTitle() ?? ""
+        view.configure(title: title)
+        
+        return view
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -262,7 +274,7 @@ extension PackListViewController: UITableViewDataSource {
         }
 
         cell.selectionStyle = .none
-        cell.configure(pack: pack)
+        cell.configure(pack: pack, for: indexPath)
         
         return cell
     }

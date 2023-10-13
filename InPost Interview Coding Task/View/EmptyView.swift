@@ -46,16 +46,16 @@ private extension EmptyView {
     }
     
     func configureView() {
-
-        self.backgroundColor = .yellow
+        
+        self.backgroundColor = .white
 
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.titleLabel.textColor = UIColor.black
-        self.titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 18)
+        self.titleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 26)
+        self.titleLabel.textColor = .titleColor
         
         self.messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.messageLabel.textColor = UIColor.lightGray
-        self.messageLabel.font = UIFont(name: "HelveticaNeue-Regular", size: 17)
+        self.messageLabel.textColor = .textColor
+        self.messageLabel.font = UIFont(name: "Montserrat-Medium", size: 18)
         self.messageLabel.numberOfLines = 0
         self.messageLabel.textAlignment = .center
     }
