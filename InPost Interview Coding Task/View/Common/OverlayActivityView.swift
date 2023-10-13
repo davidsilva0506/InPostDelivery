@@ -9,31 +9,34 @@ import UIKit
 
 public final class OverlayActivityView: UIView {
 
+    // MARK: Constants
     private enum Constants {
 
         static let defaultOpacity: CGFloat = 0.4
     }
 
+    // MARK: - Properties
     let activityIndicator = UIActivityIndicatorView(style: .large)
 
     public override init(frame: CGRect) {
 
         super.init(frame: frame)
 
-        self.isHidden = true
-        self.alpha = Constants.defaultOpacity
-
-        self.addSubview(self.activityIndicator)
-
-        self.activityIndicator.pin(to: self)
+        self.addSubviews()
+        self.configureView()
+        self.defineSubviewConstraints()
     }
 
     public required init?(coder aDecoder: NSCoder) {
 
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    public static func addTo(superView: UIView) -> OverlayActivityView {
+// MARK: - Public
+public extension OverlayActivityView {
+    
+    static func addTo(superView: UIView) -> OverlayActivityView {
 
         let overlayActivityView = OverlayActivityView()
 
@@ -44,7 +47,7 @@ public final class OverlayActivityView: UIView {
         return overlayActivityView
     }
 
-    public func showActivityOverlay() {
+    func showActivityOverlay() {
 
         self.activityIndicator.color = UIColor.gray
         self.activityIndicator.startAnimating()
@@ -55,10 +58,30 @@ public final class OverlayActivityView: UIView {
         self.superview?.bringSubviewToFront(self)
     }
 
-    public func hideActivityOverlay() {
+    func hideActivityOverlay() {
 
         self.isHidden = true
 
         self.activityIndicator.stopAnimating()
+    }
+}
+
+// MARK: - Private
+private extension OverlayActivityView {
+    
+    func addSubviews() {
+
+        self.add(self.activityIndicator)
+    }
+    
+    func configureView() {
+        
+        self.isHidden = true
+        self.alpha = Constants.defaultOpacity
+    }
+    
+    func defineSubviewConstraints() {
+
+        self.activityIndicator.pin(to: self)
     }
 }

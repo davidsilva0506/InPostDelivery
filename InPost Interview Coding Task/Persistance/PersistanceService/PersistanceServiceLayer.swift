@@ -18,7 +18,7 @@ final class PersistanceServiceLayer: PersistanceProtocol, PackPersistanceProvide
     
     func archivePack(_ pack: Pack) throws {
         
-        let object = self.mapToObject(pack)
+        let object = Self.mapToObject(pack)
         object.isArchived = true
         
         do {
@@ -33,7 +33,7 @@ final class PersistanceServiceLayer: PersistanceProtocol, PackPersistanceProvide
 
     func savePack(_ pack: Pack) throws {
         
-        let object = self.mapToObject(pack)
+        let object = Self.mapToObject(pack)
         
         if let persistedObject = try? self.persistance.fetch(PersistedPack.self, primaryKey: object.id) {
             
@@ -56,48 +56,11 @@ final class PersistanceServiceLayer: PersistanceProtocol, PackPersistanceProvide
             
             let packs = try self.persistance.fetch(PersistedPack.self)
             
-            return packs.map { self.mapFromObject($0) }
+            return packs.map { Self.mapFromObject($0) }
             
         } catch {
             
             throw error
         }
-    }
-}
-
-private extension PersistanceServiceLayer {
-    
-    func mapToObject(_ pack: Pack) -> PersistedPack {
-        
-        let persistedPack = PersistedPack()
-        
-        persistedPack.id = pack.id
-        persistedPack.status = pack.status.rawValue
-        persistedPack.sender = pack.sender
-        persistedPack.expiryDate = pack.expiryDate
-        persistedPack.pickUpDate = pack.pickUpDate
-        persistedPack.storedDate = pack.storedDate
-        persistedPack.shipmentType = pack.shipmentType.rawValue
-        
-        if let isArchived = pack.isArchived {
-            
-            persistedPack.isArchived = isArchived
-        }
-        
-        return persistedPack
-    }
-    
-    func mapFromObject(_ persistedPack: PersistedPack) -> Pack {
-        
-        let pack = Pack(id: persistedPack.id,
-                        status: PackStatus(rawValue: persistedPack.status) ?? .unknown,
-                        sender: persistedPack.sender,
-                        expiryDate: persistedPack.expiryDate,
-                        pickUpDate: persistedPack.pickUpDate,
-                        storedDate: persistedPack.storedDate,
-                        shipmentType: ShipmentType(rawValue: persistedPack.shipmentType) ?? .unknown,
-                        isArchived: persistedPack.isArchived)
-        
-        return pack
     }
 }

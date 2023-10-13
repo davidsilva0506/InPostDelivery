@@ -20,15 +20,13 @@ enum PackState {
 
 final class PackListViewModel: NSObject {
 
-    // MARK: Constants
-    private enum Constants {}
-
     // MARK: - Properties
     private unowned let provider: PackProvider
     private unowned let persistanceProvider: PackPersistanceProvider
     
     private var realm: Realm?
     private(set) var currentState = PassthroughSubject<PackState, Never>()
+    
     var packs: [[Pack]] = []
 
     init(provider: PackProvider, persistanceProvider: PackPersistanceProvider) {
@@ -86,7 +84,7 @@ extension PackListViewModel {
     }
 }
 
-// MARK: - Helpers
+// MARK: - Private Helpers
 private extension PackListViewModel {
     
     func retrievePacks() async {
@@ -94,9 +92,8 @@ private extension PackListViewModel {
         do {
 
             let packs = try self.persistanceProvider.fetchPacks()
-
             self.packs = self.groupPacks(packs.filter { $0.isArchived ?? false == false })
-            
+
             self.packs.joined().count > 0 ? self.currentState.send(.loaded) : self.currentState.send(.empty)
 
         } catch {

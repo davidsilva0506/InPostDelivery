@@ -9,11 +9,17 @@ import UIKit
 
 public final class EmptyView: UIView {
 
+    // MARK: Constants
     private enum Constants {
 
-        
+        static let titleLabelFont = "Montserrat-SemiBold"
+        static let messageLabelFont = "Montserrat-Medium"
+        static let titleLabelFontSize: CGFloat = 26
+        static let messageLabelFontSize: CGFloat = 18
+        static let messageLabelSpacing: CGFloat = 20
     }
 
+    // MARK: - Properties
     let titleLabel = UILabel()
     let messageLabel = UILabel()
 
@@ -30,14 +36,19 @@ public final class EmptyView: UIView {
 
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+// MARK: - Public
+public extension EmptyView {
     
-    public func configure(title: String, message: String) {
+    func configure(title: String, message: String) {
         
         self.titleLabel.text = title
         self.messageLabel.text = message
     }
 }
 
+// MARK: - Private
 private extension EmptyView {
     
     func addSubviews() {
@@ -50,12 +61,12 @@ private extension EmptyView {
         self.backgroundColor = .white
 
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.titleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 26)
+        self.titleLabel.font = UIFont(name: Constants.titleLabelFont, size: Constants.titleLabelFontSize)
         self.titleLabel.textColor = .titleColor
         
         self.messageLabel.translatesAutoresizingMaskIntoConstraints = false
         self.messageLabel.textColor = .textColor
-        self.messageLabel.font = UIFont(name: "Montserrat-Medium", size: 18)
+        self.messageLabel.font = UIFont(name: Constants.messageLabelFont, size: Constants.messageLabelFontSize)
         self.messageLabel.numberOfLines = 0
         self.messageLabel.textAlignment = .center
     }
@@ -65,8 +76,8 @@ private extension EmptyView {
         self.titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         self.titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
-        self.messageLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 20).isActive = true
-        self.messageLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
-        self.messageLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        self.messageLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: Constants.messageLabelSpacing).isActive = true
+        self.messageLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: Constants.messageLabelSpacing).isActive = true
+        self.messageLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -Constants.messageLabelSpacing).isActive = true
     }
 }

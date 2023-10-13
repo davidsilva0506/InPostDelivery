@@ -41,6 +41,7 @@
 		30963D6E2AD4507400898F8A /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D6D2AD4507400898F8A /* UIView+Helper.swift */; };
 		30963D702AD451B000898F8A /* PackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D6F2AD451B000898F8A /* PackTableViewCell.swift */; };
 		30CC1DE02AD967B800BF2281 /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DDF2AD967B700BF2281 /* UIViewController+Error.swift */; };
+		30CC1DE22AD9988600BF2281 /* PersistanceServiceLayer+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DE12AD9988600BF2281 /* PersistanceServiceLayer+Mapping.swift */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
 		D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListViewController.swift */; };
 		D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D671D9602913E529001FA9D5 /* Assets.xcassets */; };
@@ -48,9 +49,6 @@
 		D671D96F2913E529001FA9D5 /* InPostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D96E2913E529001FA9D5 /* InPostTests.swift */; };
 		D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */; };
 		D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D98E2913F2A1001FA9D5 /* Pack.swift */; };
-		D671D9912913F79B001FA9D5 /* PackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9902913F79B001FA9D5 /* PackView.swift */; };
-		D671D9942913F82E001FA9D5 /* PackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D671D9932913F82E001FA9D5 /* PackView.xib */; };
-		D671D9972915111C001FA9D5 /* PackNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9962915111C001FA9D5 /* PackNetworking.swift */; };
 		D671D99E2915139F001FA9D5 /* packs.json in Resources */ = {isa = PBXBuildFile; fileRef = D671D99D2915139F001FA9D5 /* packs.json */; };
 		E9D6834053AC34681B44D9F7 /* Pods_InPost_Interview_Coding_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D61EABD2778CE163139EDFE /* Pods_InPost_Interview_Coding_Task.framework */; };
 		F06EF28DEDF5FA9A19B77F9F /* Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871FC296EE090F4634A2C236 /* Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests.framework */; };
@@ -107,6 +105,7 @@
 		30963D6D2AD4507400898F8A /* UIView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helper.swift"; sourceTree = "<group>"; };
 		30963D6F2AD451B000898F8A /* PackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackTableViewCell.swift; sourceTree = "<group>"; };
 		30CC1DDF2AD967B700BF2281 /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
+		30CC1DE12AD9988600BF2281 /* PersistanceServiceLayer+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistanceServiceLayer+Mapping.swift"; sourceTree = "<group>"; };
 		58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		83D85C87E2E58F658C011C49 /* Pods-InPost Interview Coding Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,9 +124,6 @@
 		D671D9742913E529001FA9D5 /* InPost Interview Coding TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InPost Interview Coding TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPNavigationController.swift; sourceTree = "<group>"; };
 		D671D98E2913F2A1001FA9D5 /* Pack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pack.swift; sourceTree = "<group>"; };
-		D671D9902913F79B001FA9D5 /* PackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackView.swift; sourceTree = "<group>"; };
-		D671D9932913F82E001FA9D5 /* PackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackView.xib; sourceTree = "<group>"; };
-		D671D9962915111C001FA9D5 /* PackNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackNetworking.swift; sourceTree = "<group>"; };
 		D671D99D2915139F001FA9D5 /* packs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = packs.json; sourceTree = "<group>"; };
 		E9D6C720825E15C8DB9CDFC0 /* Pods_InPost_Interview_Coding_TaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPost_Interview_Coding_TaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0ADA89C9F6B8ABEECD7623 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +181,7 @@
 				3039B5482AD73DA300D7E915 /* PersistanceProviders */,
 				3039B54B2AD73E0900D7E915 /* PersistanceProtocol.swift */,
 				3039B54E2AD73EA400D7E915 /* PersistanceServiceLayer.swift */,
+				30CC1DE12AD9988600BF2281 /* PersistanceServiceLayer+Mapping.swift */,
 			);
 			path = PersistanceService;
 			sourceTree = "<group>";
@@ -227,13 +224,9 @@
 		30963D202AD4379E00898F8A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D671D9922913F81D001FA9D5 /* PackView */,
-				D671D95B2913E528001FA9D5 /* PackListViewController.swift */,
-				30963D6F2AD451B000898F8A /* PackTableViewCell.swift */,
-				3039B53B2AD6DCDD00D7E915 /* OverlayActivityView.swift */,
-				3039B5552AD80CDD00D7E915 /* EmptyView.swift */,
-				3039B5572AD890A600D7E915 /* PackTableViewCell+Configuration.swift */,
-				3039B55F2AD8A44400D7E915 /* SectionHeaderView.swift */,
+				30CC1DE72AD99E3D00BF2281 /* Common */,
+				30CC1DE62AD99E2B00BF2281 /* Cells */,
+				30CC1DE52AD99E1C00BF2281 /* Controllers */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +268,50 @@
 				30CC1DDF2AD967B700BF2281 /* UIViewController+Error.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		30CC1DE32AD99CB000BF2281 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D671D9882913E677001FA9D5 /* Assets */,
+				30963D232AD43CE100898F8A /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		30CC1DE42AD99CDF00BF2281 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				30963D1E2AD40D3100898F8A /* Core.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		30CC1DE52AD99E1C00BF2281 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D671D95B2913E528001FA9D5 /* PackListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		30CC1DE62AD99E2B00BF2281 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3039B5572AD890A600D7E915 /* PackTableViewCell+Configuration.swift */,
+				30963D6F2AD451B000898F8A /* PackTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		30CC1DE72AD99E3D00BF2281 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3039B53B2AD6DCDD00D7E915 /* OverlayActivityView.swift */,
+				3039B5552AD80CDD00D7E915 /* EmptyView.swift */,
+				3039B55F2AD8A44400D7E915 /* SectionHeaderView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		913D9F73B32F33C130C9E20B /* Frameworks */ = {
@@ -324,7 +361,9 @@
 		D671D9562913E528001FA9D5 /* InPost Interview Coding Task */ = {
 			isa = PBXGroup;
 			children = (
-				D671D9872913E649001FA9D5 /* App */,
+				30CC1DE32AD99CB000BF2281 /* Resources */,
+				D671D9872913E649001FA9D5 /* AppDelegate */,
+				30CC1DE42AD99CDF00BF2281 /* Core */,
 				D671D9952915110C001FA9D5 /* Networking */,
 				3039B5452AD7306800D7E915 /* Persistance */,
 				30963D222AD4383100898F8A /* Navigation */,
@@ -340,21 +379,19 @@
 		D671D96D2913E529001FA9D5 /* InPost Interview Coding TaskTests */ = {
 			isa = PBXGroup;
 			children = (
+				D671D99929151360001FA9D5 /* Mock */,
 				D671D96E2913E529001FA9D5 /* InPostTests.swift */,
 			);
 			path = "InPost Interview Coding TaskTests";
 			sourceTree = "<group>";
 		};
-		D671D9872913E649001FA9D5 /* App */ = {
+		D671D9872913E649001FA9D5 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				30963D232AD43CE100898F8A /* Fonts */,
-				D671D9882913E677001FA9D5 /* Assets */,
 				D671D9572913E528001FA9D5 /* AppDelegate.swift */,
 				30963D6A2AD44A6900898F8A /* SceneDelegate.swift */,
-				30963D1E2AD40D3100898F8A /* Core.swift */,
 			);
-			path = App;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		D671D9882913E677001FA9D5 /* Assets */ = {
@@ -378,15 +415,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D671D9922913F81D001FA9D5 /* PackView */ = {
-			isa = PBXGroup;
-			children = (
-				D671D9902913F79B001FA9D5 /* PackView.swift */,
-				D671D9932913F82E001FA9D5 /* PackView.xib */,
-			);
-			path = PackView;
-			sourceTree = "<group>";
-		};
 		D671D9952915110C001FA9D5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,8 +422,6 @@
 				30963D0F2AD4042B00898F8A /* NetworkConfig.swift */,
 				30963D162AD405B300898F8A /* Service */,
 				30963D112AD4045500898F8A /* Requests */,
-				D671D99929151360001FA9D5 /* Mock */,
-				D671D9962915111C001FA9D5 /* PackNetworking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -523,7 +549,6 @@
 				D671D99E2915139F001FA9D5 /* packs.json in Resources */,
 				30963D2C2AD43CF500898F8A /* Montserrat-SemiBold.otf in Resources */,
 				D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */,
-				D671D9942913F82E001FA9D5 /* PackView.xib in Resources */,
 				30963D292AD43CF500898F8A /* Montserrat-Bold.otf in Resources */,
 				30963D2A2AD43CF500898F8A /* Montserrat-Black.otf in Resources */,
 			);
@@ -666,7 +691,6 @@
 				3039B55E2AD8979F00D7E915 /* ShipmentType+Helper.swift in Sources */,
 				30963D132AD4047200898F8A /* PackRequest.swift in Sources */,
 				30963D6E2AD4507400898F8A /* UIView+Helper.swift in Sources */,
-				D671D9972915111C001FA9D5 /* PackNetworking.swift in Sources */,
 				D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */,
 				D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */,
 				3039B5342AD6A8FA00D7E915 /* PackListViewModel.swift in Sources */,
@@ -677,9 +701,9 @@
 				3039B5472AD7311000D7E915 /* PersistanceLayer.swift in Sources */,
 				3039B5362AD6B3BC00D7E915 /* Collection+Safe.swift in Sources */,
 				3039B5602AD8A44400D7E915 /* SectionHeaderView.swift in Sources */,
-				D671D9912913F79B001FA9D5 /* PackView.swift in Sources */,
 				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
 				30963D1A2AD406A700898F8A /* ServiceLayer.swift in Sources */,
+				30CC1DE22AD9988600BF2281 /* PersistanceServiceLayer+Mapping.swift in Sources */,
 				30963D0E2AD403FB00898F8A /* NetworkLayer.swift in Sources */,
 				3039B54A2AD73DB800D7E915 /* PackPersistanceProvider.swift in Sources */,
 				30963D1F2AD40D3100898F8A /* Core.swift in Sources */,

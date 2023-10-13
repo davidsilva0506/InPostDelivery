@@ -9,12 +9,18 @@ import UIKit
 
 public extension UIViewController {
 
+    private enum Constants {
+    
+        static let errorTitle = "Oops"
+        static let errorMessage = "Something went wrong"
+        static let buttonTitle = "Dismiss"
+    }
+    
     func showGenericError() {
 
-        let alert = UIAlertController(title: "Oops", message: "Something went wrong", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .destructive))
+        let alert = UIAlertController(title: Constants.errorTitle, message: Constants.errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Constants.buttonTitle, style: .destructive))
         
         self.present(alert, animated: true)
     }
 }
-
