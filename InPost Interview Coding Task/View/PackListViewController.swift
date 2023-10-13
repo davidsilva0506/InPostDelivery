@@ -157,16 +157,17 @@ private extension PackListViewController {
 
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             
-        case .error(let error):
+        case .error:
     
             self.hideActivityOverlay()
             self.refreshControl.endRefreshing()
-            self.handleError(error)
+            self.handleError()
         }
     }
     
-    func handleError(_ error: Error) {
+    func handleError() {
         
+        self.showGenericError()
     }
 }
 

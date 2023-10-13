@@ -15,7 +15,7 @@ enum PackState {
     case loaded
     case archiveCompleted(IndexPath)
     case empty
-    case error(Error)
+    case error
 }
 
 final class PackListViewModel: NSObject {
@@ -60,7 +60,7 @@ extension PackListViewModel {
                 
             } catch {
                 
-                self.currentState.send(.error(error))
+                self.currentState.send(.error)
             }
         }
     }
@@ -81,7 +81,7 @@ extension PackListViewModel {
             
         } catch {
             
-            self.currentState.send(.error(error))
+            self.currentState.send(.error)
         }
     }
 }
@@ -101,7 +101,7 @@ private extension PackListViewModel {
 
         } catch {
 
-            self.currentState.send(.error(error))
+            self.currentState.send(.error)
         }
     }
 
@@ -115,7 +115,7 @@ private extension PackListViewModel {
                 
             } catch {
                 
-                print(error)
+                assertionFailure("Failed to save packs with error:\(error)")
             }
         }
     }
