@@ -17,8 +17,8 @@ extension PackTableViewCell {
             self.topDivider.isHidden = true
         }
 
-        self.packImageView.image = UIImage(named: pack.shipmentType.imageName)
-        self.packNumberLabel.text = pack.id
+        self.packInfoView.packImageView.image = UIImage(named: pack.shipmentType.imageName)
+        self.packInfoView.packNumberLabel.text = pack.id
         self.packStatusLabel.text = pack.status.text
         self.packSenderLabel.text = pack.sender
         

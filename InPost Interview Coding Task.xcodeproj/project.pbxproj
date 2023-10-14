@@ -42,6 +42,10 @@
 		30963D702AD451B000898F8A /* PackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30963D6F2AD451B000898F8A /* PackTableViewCell.swift */; };
 		30CC1DE02AD967B800BF2281 /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DDF2AD967B700BF2281 /* UIViewController+Error.swift */; };
 		30CC1DE22AD9988600BF2281 /* PersistanceServiceLayer+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DE12AD9988600BF2281 /* PersistanceServiceLayer+Mapping.swift */; };
+		30CC1DEA2ADAE95500BF2281 /* PackInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DE92ADAE95500BF2281 /* PackInfoView.swift */; };
+		30CC1DEC2ADAE96300BF2281 /* PackStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DEB2ADAE96300BF2281 /* PackStatusView.swift */; };
+		30CC1DEE2ADAE97000BF2281 /* PackSenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DED2ADAE97000BF2281 /* PackSenderView.swift */; };
+		30CC1DF02ADAE98100BF2281 /* ViewMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DEF2ADAE98100BF2281 /* ViewMoreView.swift */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
 		D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListViewController.swift */; };
 		D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D671D9602913E529001FA9D5 /* Assets.xcassets */; };
@@ -106,6 +110,10 @@
 		30963D6F2AD451B000898F8A /* PackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackTableViewCell.swift; sourceTree = "<group>"; };
 		30CC1DDF2AD967B700BF2281 /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
 		30CC1DE12AD9988600BF2281 /* PersistanceServiceLayer+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistanceServiceLayer+Mapping.swift"; sourceTree = "<group>"; };
+		30CC1DE92ADAE95500BF2281 /* PackInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackInfoView.swift; sourceTree = "<group>"; };
+		30CC1DEB2ADAE96300BF2281 /* PackStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackStatusView.swift; sourceTree = "<group>"; };
+		30CC1DED2ADAE97000BF2281 /* PackSenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackSenderView.swift; sourceTree = "<group>"; };
+		30CC1DEF2ADAE98100BF2281 /* ViewMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreView.swift; sourceTree = "<group>"; };
 		58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		83D85C87E2E58F658C011C49 /* Pods-InPost Interview Coding Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +232,7 @@
 		30963D202AD4379E00898F8A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				30CC1DE82ADAE94500BF2281 /* Pack */,
 				30CC1DE72AD99E3D00BF2281 /* Common */,
 				30CC1DE62AD99E2B00BF2281 /* Cells */,
 				30CC1DE52AD99E1C00BF2281 /* Controllers */,
@@ -310,8 +319,19 @@
 				3039B53B2AD6DCDD00D7E915 /* OverlayActivityView.swift */,
 				3039B5552AD80CDD00D7E915 /* EmptyView.swift */,
 				3039B55F2AD8A44400D7E915 /* SectionHeaderView.swift */,
+				30CC1DEF2ADAE98100BF2281 /* ViewMoreView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		30CC1DE82ADAE94500BF2281 /* Pack */ = {
+			isa = PBXGroup;
+			children = (
+				30CC1DE92ADAE95500BF2281 /* PackInfoView.swift */,
+				30CC1DEB2ADAE96300BF2281 /* PackStatusView.swift */,
+				30CC1DED2ADAE97000BF2281 /* PackSenderView.swift */,
+			);
+			path = Pack;
 			sourceTree = "<group>";
 		};
 		913D9F73B32F33C130C9E20B /* Frameworks */ = {
@@ -683,6 +703,8 @@
 				3039B5402AD6E45D00D7E915 /* PackStatus+Helper.swift in Sources */,
 				3039B5582AD890A600D7E915 /* PackTableViewCell+Configuration.swift in Sources */,
 				30CC1DE02AD967B800BF2281 /* UIViewController+Error.swift in Sources */,
+				30CC1DEC2ADAE96300BF2281 /* PackStatusView.swift in Sources */,
+				30CC1DEE2ADAE97000BF2281 /* PackSenderView.swift in Sources */,
 				3039B5522AD73F9E00D7E915 /* PersistedPack.swift in Sources */,
 				30963D1C2AD40BA300898F8A /* PackProvider.swift in Sources */,
 				3039B53C2AD6DCDD00D7E915 /* OverlayActivityView.swift in Sources */,
@@ -696,6 +718,7 @@
 				3039B5342AD6A8FA00D7E915 /* PackListViewModel.swift in Sources */,
 				30963D6B2AD44A6900898F8A /* SceneDelegate.swift in Sources */,
 				3039B55C2AD8971600D7E915 /* ShipmentType.swift in Sources */,
+				30CC1DF02ADAE98100BF2281 /* ViewMoreView.swift in Sources */,
 				D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */,
 				3039B54F2AD73EA400D7E915 /* PersistanceServiceLayer.swift in Sources */,
 				3039B5472AD7311000D7E915 /* PersistanceLayer.swift in Sources */,
@@ -709,6 +732,7 @@
 				30963D1F2AD40D3100898F8A /* Core.swift in Sources */,
 				30963D102AD4042B00898F8A /* NetworkConfig.swift in Sources */,
 				30963D152AD4049A00898F8A /* RequestProtocol.swift in Sources */,
+				30CC1DEA2ADAE95500BF2281 /* PackInfoView.swift in Sources */,
 				3039B54C2AD73E0900D7E915 /* PersistanceProtocol.swift in Sources */,
 				30963D182AD405D100898F8A /* ServiceProtocol.swift in Sources */,
 			);
