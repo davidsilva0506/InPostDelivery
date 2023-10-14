@@ -12,6 +12,12 @@ public final class PackSenderView: UIView {
     // MARK: Constants
     private enum Constants {
 
+        static let titleFontName = "Montserrat-SemiBold"
+        static let titleFontSize: CGFloat = 11
+        static let title = "NADAWCA"
+        
+        static let valueFontName = "Montserrat-Bold"
+        static let valueFontSize: CGFloat = 15
     }
 
     // MARK: - Properties
@@ -43,11 +49,11 @@ private extension PackSenderView {
     
     func configureView() {
         
-        self.packSenderTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 11)
+        self.packSenderTitleLabel.font = UIFont(name: Constants.titleFontName, size: Constants.titleFontSize)
         self.packSenderTitleLabel.textColor = .titleColor
-        self.packSenderTitleLabel.text = "NADAWCA"
+        self.packSenderTitleLabel.text = Constants.title
 
-        self.packSenderLabel.font = UIFont(name: "Montserrat-Bold", size: 15)
+        self.packSenderLabel.font = UIFont(name: Constants.valueFontName, size: Constants.valueFontSize)
         self.packSenderLabel.textColor = .textColor
         self.packSenderLabel.numberOfLines = 0
     }
