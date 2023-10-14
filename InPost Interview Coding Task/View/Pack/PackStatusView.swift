@@ -12,6 +12,18 @@ public final class PackStatusView: UIView {
     // MARK: Constants
     private enum Constants {
 
+        static let titleFontName = "Montserrat-SemiBold"
+        static let titleFontSize: CGFloat = 11
+        static let title = "STATUS"
+        
+        static let valueFontName = "Montserrat-Bold"
+        static let valueFontSize: CGFloat = 15
+
+        static let dateTitle = "NR PRZESYŁKI"
+        
+        static let dateValueFontName = "Montserrat-Medium"
+        
+        static let horizontalSpacing: CGFloat = 4
     }
 
     // MARK: - Properties
@@ -48,18 +60,18 @@ private extension PackStatusView {
     
     func configureView() {
         
-        self.packStatusTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 11)
+        self.packStatusTitleLabel.font = UIFont(name: Constants.titleFontName, size: Constants.titleFontSize)
         self.packStatusTitleLabel.textColor = .titleColor
-        self.packStatusTitleLabel.text = "STATUS"
+        self.packStatusTitleLabel.text = Constants.title
         
-        self.packStatusLabel.font = UIFont(name: "Montserrat-Bold", size: 15)
+        self.packStatusLabel.font = UIFont(name: Constants.valueFontName, size: Constants.valueFontSize)
         self.packStatusLabel.textColor = .textColor
         self.packStatusLabel.numberOfLines = 0
         
-        self.packDateTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 11)
+        self.packDateTitleLabel.font = UIFont(name: Constants.titleFontName, size: Constants.titleFontSize)
         self.packDateTitleLabel.textColor = .titleColor
         
-        self.packDateLabel.font = UIFont(name: "Montserrat-Medium", size: 15)
+        self.packDateLabel.font = UIFont(name: Constants.dateValueFontName, size: Constants.valueFontSize)
         self.packDateLabel.textColor = .textColor
         self.packDateLabel.textAlignment = .right
     }
@@ -77,7 +89,7 @@ private extension PackStatusView {
         self.packStatusLabel.topAnchor.constraint(equalTo: self.packStatusTitleLabel.bottomAnchor).isActive = true
         self.packStatusLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         self.packStatusLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        self.packStatusLabel.trailingAnchor.constraint(equalTo: self.packDateLabel.leadingAnchor, constant: -4).isActive = true
+        self.packStatusLabel.trailingAnchor.constraint(equalTo: self.packDateLabel.leadingAnchor, constant: -Constants.horizontalSpacing).isActive = true
         
         self.packDateTitleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         self.packDateTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true

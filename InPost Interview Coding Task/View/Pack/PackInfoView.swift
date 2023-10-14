@@ -12,6 +12,15 @@ public final class PackInfoView: UIView {
     // MARK: Constants
     private enum Constants {
 
+        static let titleFontName = "Montserrat-SemiBold"
+        static let titleFontSize: CGFloat = 11
+        static let title = "NR PRZESYŁKI"
+        
+        static let valueFontName = "Montserrat-Medium"
+        static let valueFontSize: CGFloat = 15
+        
+        static let horizontalSpacing: CGFloat = 4
+        static let imageWidth: CGFloat = 50
     }
 
     // MARK: - Properties
@@ -44,11 +53,11 @@ private extension PackInfoView {
     
     func configureView() {
         
-        self.packNumberTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 11)
+        self.packNumberTitleLabel.font = UIFont(name: Constants.titleFontName, size: Constants.titleFontSize)
         self.packNumberTitleLabel.textColor = .titleColor
-        self.packNumberTitleLabel.text = "NR PRZESYŁKI"
+        self.packNumberTitleLabel.text = Constants.title
         
-        self.packNumberLabel.font = UIFont(name: "Montserrat-Medium", size: 15)
+        self.packNumberLabel.font = UIFont(name: Constants.valueFontName, size: Constants.valueFontSize)
         self.packNumberLabel.textColor = .textColor
         self.packNumberLabel.numberOfLines = 0
         
@@ -69,11 +78,12 @@ private extension PackInfoView {
         self.packNumberLabel.topAnchor.constraint(equalTo: self.packNumberTitleLabel.bottomAnchor).isActive = true
         self.packNumberLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         self.packNumberLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        self.packNumberLabel.trailingAnchor.constraint(greaterThanOrEqualTo: self.packImageView.leadingAnchor, constant: -4).isActive = true
+        self.packNumberLabel.trailingAnchor.constraint(greaterThanOrEqualTo: self.packImageView.leadingAnchor,
+                                                       constant: -Constants.horizontalSpacing).isActive = true
         
         self.packImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         self.packImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         self.packImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        self.packImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        self.packImageView.widthAnchor.constraint(equalToConstant: Constants.imageWidth).isActive = true
     }
 }
