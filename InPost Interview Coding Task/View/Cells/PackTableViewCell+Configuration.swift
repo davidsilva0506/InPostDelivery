@@ -20,7 +20,7 @@ extension PackTableViewCell {
         self.packInfoView.packImageView.image = UIImage(named: pack.shipmentType.imageName)
         self.packInfoView.packNumberLabel.text = pack.id
         self.packStatusView.packStatusLabel.text = pack.status.text
-        self.packSenderLabel.text = pack.sender
+        self.packSenderView.packSenderLabel.text = pack.sender
         
         if pack.status == .delivered || pack.status == .confirmed,
             let date = pack.pickUpDate {

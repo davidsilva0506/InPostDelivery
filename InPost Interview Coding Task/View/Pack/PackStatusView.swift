@@ -86,4 +86,3 @@ private extension PackStatusView {
         self.packDateLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
 }
-

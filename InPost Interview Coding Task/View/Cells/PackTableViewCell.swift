@@ -12,17 +12,12 @@ class PackTableViewCell: UITableViewCell {
     var container = UIView()
     var packInfoView = PackInfoView()
     var packStatusView = PackStatusView()
-    var packSenderContainer = UIView()
+    var packSenderView = PackSenderView()
     var viewMoreContainer = UIView()
     var topDivider = UIView()
     var bottomDivider = UIView()
 
-
-    var packSenderTitleLabel = UILabel()
-    var packSenderLabel = UILabel()
     var viewMoreLabel = UILabel()
-    
-
     var viewMoreImageView = UIImageView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -44,13 +39,12 @@ class PackTableViewCell: UITableViewCell {
 private extension PackTableViewCell {
     
     func addSubviews() {
-        
-        self.packSenderContainer.add(self.packSenderTitleLabel, self.packSenderLabel)
+
         self.viewMoreContainer.add(self.viewMoreLabel, self.viewMoreImageView)
         
         self.container.add(self.packInfoView,
                            self.packStatusView,
-                           self.packSenderContainer,
+                           self.packSenderView,
                            self.viewMoreContainer)
         
         self.contentView.add(self.topDivider, self.container)
@@ -60,36 +54,10 @@ private extension PackTableViewCell {
 
         self.selectionStyle = .none
         
-        
-        self.packSenderTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 11)
-        
-        
-        
-        self.packSenderTitleLabel.textColor = .titleColor
-        
-        
-
-        
-        
-        
-        self.packSenderLabel.font = UIFont(name: "Montserrat-Bold", size: 15)
-        
-        
-        
-        self.packSenderLabel.textColor = .textColor
-
-        
-        
-        self.packSenderLabel.numberOfLines = 0
-        
         self.viewMoreLabel.font = UIFont(name: "Montserrat-Bold", size: 12)
         self.viewMoreLabel.textColor = .textColor
         self.viewMoreImageView.clipsToBounds = true
         self.viewMoreImageView.contentMode = .scaleAspectFit
-        
-        
-        
-        self.packSenderTitleLabel.text = "NADAWCA"
         
         self.viewMoreLabel.text = "więcej"
         self.viewMoreImageView.image = UIImage(named: "Arrow")
@@ -107,24 +75,14 @@ private extension PackTableViewCell {
         self.container.translatesAutoresizingMaskIntoConstraints = false
         self.packInfoView.translatesAutoresizingMaskIntoConstraints = false
         self.packStatusView.translatesAutoresizingMaskIntoConstraints = false
-        self.packSenderContainer.translatesAutoresizingMaskIntoConstraints = false
+        self.packSenderView.translatesAutoresizingMaskIntoConstraints = false
         self.viewMoreContainer.translatesAutoresizingMaskIntoConstraints = false
 
-        self.packSenderTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.packSenderLabel.translatesAutoresizingMaskIntoConstraints = false
         self.viewMoreLabel.translatesAutoresizingMaskIntoConstraints = false
         self.viewMoreImageView.translatesAutoresizingMaskIntoConstraints = false
         
         self.topDivider.translatesAutoresizingMaskIntoConstraints = false
         self.bottomDivider.translatesAutoresizingMaskIntoConstraints = false
-        
-        //Pack Sender
-        self.packSenderTitleLabel.topAnchor.constraint(equalTo: self.packSenderContainer.topAnchor).isActive = true
-        self.packSenderTitleLabel.leadingAnchor.constraint(equalTo: self.packSenderContainer.leadingAnchor).isActive = true
-        
-        self.packSenderLabel.topAnchor.constraint(equalTo: self.packSenderTitleLabel.bottomAnchor).isActive = true
-        self.packSenderLabel.leadingAnchor.constraint(equalTo: self.packSenderContainer.leadingAnchor).isActive = true
-        self.packSenderLabel.bottomAnchor.constraint(equalTo: self.packSenderContainer.bottomAnchor).isActive = true
         
         //View more
         self.viewMoreLabel.leadingAnchor.constraint(equalTo: self.viewMoreContainer.leadingAnchor).isActive = true
@@ -147,11 +105,11 @@ private extension PackTableViewCell {
         self.packStatusView.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -20).isActive = true
         self.packStatusView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        self.packSenderContainer.topAnchor.constraint(equalTo: self.packStatusView.bottomAnchor, constant: 16).isActive = true
-        self.packSenderContainer.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 20).isActive = true
-        self.packSenderContainer.trailingAnchor.constraint(equalTo: self.viewMoreContainer.leadingAnchor, constant: -4).isActive = true
-        self.packSenderContainer.bottomAnchor.constraint(equalTo: self.container.bottomAnchor, constant: -16).isActive = true
-        self.packSenderContainer.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        self.packSenderView.topAnchor.constraint(equalTo: self.packStatusView.bottomAnchor, constant: 16).isActive = true
+        self.packSenderView.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 20).isActive = true
+        self.packSenderView.trailingAnchor.constraint(equalTo: self.viewMoreContainer.leadingAnchor, constant: -4).isActive = true
+        self.packSenderView.bottomAnchor.constraint(equalTo: self.container.bottomAnchor, constant: -16).isActive = true
+        self.packSenderView.heightAnchor.constraint(equalToConstant: 40).isActive = true
 
         self.viewMoreContainer.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -20).isActive = true
         self.viewMoreContainer.bottomAnchor.constraint(equalTo: self.container.bottomAnchor, constant: -16).isActive = true
