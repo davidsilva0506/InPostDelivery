@@ -16,6 +16,10 @@ class PackTableViewCell: UITableViewCell {
         static let verticalSpacing: CGFloat = 16
         static let subViewHeight: CGFloat = 40
         static let spaceBetweenViews: CGFloat = 4
+        
+        static let shadowRadius: CGFloat = 5
+        static let shadowOffsetHeight: CGFloat = 5
+        static let shadowOpacity: Float = 0.1
     }
 
     var container = UIView()
@@ -64,10 +68,11 @@ private extension PackTableViewCell {
     
     func addShadow() {
         
+        self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 5
-        self.layer.shadowOffset = CGSize(width: 0, height: 5)
-        self.layer.shadowOpacity = 0.1
+        self.layer.shadowRadius = Constants.shadowRadius
+        self.layer.shadowOffset = CGSize(width: 0, height: Constants.shadowOffsetHeight)
+        self.layer.shadowOpacity = Constants.shadowOpacity
     }
     
     func defineSubviewConstraints() {
