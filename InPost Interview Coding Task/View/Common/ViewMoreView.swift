@@ -12,6 +12,14 @@ public final class ViewMoreView: UIView {
     // MARK: Constants
     private enum Constants {
 
+        static let fontName = "Montserrat-Bold"
+        static let fontSize: CGFloat = 12
+
+        static let viewMore = "więcej"
+        
+        static let imageName = "Arrow"
+        
+        static let horizontalSpacing: CGFloat = 4
     }
 
     // MARK: - Properties
@@ -43,13 +51,13 @@ private extension ViewMoreView {
     
     func configureView() {
         
-        self.viewMoreLabel.font = UIFont(name: "Montserrat-Bold", size: 12)
+        self.viewMoreLabel.font = UIFont(name: Constants.fontName, size: Constants.fontSize)
         self.viewMoreLabel.textColor = .textColor
-        self.viewMoreLabel.text = "więcej"
+        self.viewMoreLabel.text = Constants.viewMore
         
         self.viewMoreImageView.clipsToBounds = true
         self.viewMoreImageView.contentMode = .scaleAspectFit
-        self.viewMoreImageView.image = UIImage(named: "Arrow")
+        self.viewMoreImageView.image = UIImage(named: Constants.imageName)
     }
     
     func defineSubviewConstraints() {
@@ -58,12 +66,13 @@ private extension ViewMoreView {
         self.viewMoreImageView.translatesAutoresizingMaskIntoConstraints = false
         
         self.viewMoreLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        self.viewMoreLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 4).isActive = true
-        self.viewMoreLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4).isActive = true
-        self.viewMoreLabel.trailingAnchor.constraint(greaterThanOrEqualTo: self.viewMoreImageView.leadingAnchor, constant: -4).isActive = true
+        self.viewMoreLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: Constants.horizontalSpacing).isActive = true
+        self.viewMoreLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Constants.horizontalSpacing).isActive = true
+        self.viewMoreLabel.trailingAnchor.constraint(greaterThanOrEqualTo: self.viewMoreImageView.leadingAnchor,
+                                                     constant: -Constants.horizontalSpacing).isActive = true
 
         self.viewMoreImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        self.viewMoreImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 4).isActive = true
-        self.viewMoreImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4).isActive = true
+        self.viewMoreImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: Constants.horizontalSpacing).isActive = true
+        self.viewMoreImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Constants.horizontalSpacing).isActive = true
     }
 }
