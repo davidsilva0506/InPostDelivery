@@ -73,7 +73,7 @@ extension PackListViewModel {
             self.currentState.send(.archiveCompleted(indexPath))
             
             if self.packs.joined().count == 0 {
-                
+
                 self.currentState.send(.empty)
             }
             
@@ -84,7 +84,7 @@ extension PackListViewModel {
     }
 }
 
-// MARK: - Private Helpers
+// MARK: - Private
 private extension PackListViewModel {
     
     func retrievePacks() async {
@@ -92,7 +92,9 @@ private extension PackListViewModel {
         do {
 
             let packs = try self.persistanceProvider.fetchPacks()
-            self.packs = self.groupPacks(packs.filter { $0.isArchived ?? false == false })
+            let visiblePacks = Self.removeArchivedPacks(packs)
+            
+            self.packs = Self.groupPacks(visiblePacks)
 
             self.packs.joined().count > 0 ? self.currentState.send(.loaded) : self.currentState.send(.empty)
 
@@ -116,19 +118,28 @@ private extension PackListViewModel {
             }
         }
     }
+}
+
+// MARK: - Private Helpers
+extension PackListViewModel {
+    
+    static func removeArchivedPacks(_ packs: [Pack]) -> [Pack] {
+        
+        return packs.filter { $0.isArchived ?? false == false }
+    }
  
-    func groupPacks(_ packs: [Pack]) -> [[Pack]] {
+    static func groupPacks(_ packs: [Pack]) -> [[Pack]] {
 
         let readyPacks = packs.filter { $0.status.activityStatus == .ready }
         let otherPacks = packs.filter { $0.status.activityStatus == .other }
 
-        let orderedReadyPacks = self.orderPacks(readyPacks)
-        let orderedOtherPacks = self.orderPacks(otherPacks)
+        let orderedReadyPacks = Self.orderPacks(readyPacks)
+        let orderedOtherPacks = Self.orderPacks(otherPacks)
 
         return [orderedReadyPacks, orderedOtherPacks]
     }
  
-    func orderPacks(_ packs: [Pack]) -> [Pack] {
+    static func orderPacks(_ packs: [Pack]) -> [Pack] {
         
         return packs.sorted {
             

@@ -6,31 +6,66 @@
 //
 
 import XCTest
+
 @testable import InPost_Interview_Coding_Task
 
-final class InPostTests: XCTestCase {
+class PackListViewModelTests: XCTestCase {
+    
+    var packs: [Pack]?
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    override func setUp() {
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        super.setUp()
+        
+        if let packs: [Pack] = try? self.load(from: "packs") {
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            self.packs = packs
         }
     }
+    
+    override func tearDown() {
 
+        super.tearDown()
+    }
+    
+    func testPacksArchived() async throws {
+        
+        let expectedOriginalCount = 6
+        let expectedCountAfterAddingPacks = 8
+        let expectedFinalCount = 7
+
+        var packs = try XCTUnwrap(self.packs)
+        
+        XCTAssertEqual(packs.count, expectedOriginalCount)
+
+        let unarchivedPack = Pack(id: "id",
+                                status: .other,
+                                sender: "sender",
+                                expiryDate: nil,
+                                pickUpDate: nil,
+                                storedDate: nil,
+                                shipmentType: .locker)
+
+        let archivedPack = Pack(id: "id",
+                                status: .other,
+                                sender: "sender",
+                                expiryDate: nil,
+                                pickUpDate: nil,
+                                storedDate: nil,
+                                shipmentType: .locker,
+                                isArchived: true)
+        
+        packs.append(unarchivedPack)
+        packs.append(archivedPack)
+        
+        let validPacks = PackListViewModel.removeArchivedPacks(packs)
+
+        XCTAssertEqual(packs.count, expectedCountAfterAddingPacks)
+        XCTAssertEqual(packs.count, expectedFinalCount)
+    }
+    
+    func testGroupByDay() async throws {
+        
+
+    }
 }
