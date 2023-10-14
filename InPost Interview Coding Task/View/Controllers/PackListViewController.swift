@@ -15,6 +15,10 @@ class PackListViewController: UIViewController {
 
         static let title = "Lista przesyłek"
         static let cellIdentifier = "PackTableViewCell"
+        static let tablewViewInsets = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+        static let emptyViewTitle = "Currently you don't have any packs"
+        static let emptyViewMessage = "Your packs will be presented her"
+        static let archiveActionTitle = "Archive"
     }
 
     // MARK: - Properties
@@ -37,7 +41,7 @@ class PackListViewController: UIViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = Constants.tablewViewInsets
         tableView.separatorStyle = .none
         
         tableView.delegate = self
@@ -85,14 +89,6 @@ class PackListViewController: UIViewController {
             await self.viewModel.fetchAndPersistPacks()
         }
     }
-    
-    @objc private func refresh(_ sender: Any) {
-
-        Task {
-
-            await self.viewModel.fetchAndPersistPacks(refreshing: true)
-        }
-    }
 }
 
 // MARK: - Bind
@@ -108,7 +104,7 @@ private extension PackListViewController {
     }
 }
 
-// MARK: - View Configuration
+// MARK: - Private View Configuration
 private extension PackListViewController {
     
     func addSubviews() {
@@ -121,7 +117,7 @@ private extension PackListViewController {
         self.tableView.register(PackTableViewCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
         self.tableView.addSubview(self.refreshControl)
         
-        self.emptyView.configure(title: "ai meu deus os packs???", message: "olha, foram à vida deles")
+        self.emptyView.configure(title: Constants.emptyViewTitle, message: Constants.emptyViewMessage)
     }
     
     func defineSubviewConstraints() {
@@ -169,6 +165,14 @@ private extension PackListViewController {
         
         self.showGenericError()
     }
+    
+    @objc func refresh(_ sender: Any) {
+
+        Task {
+
+            await self.viewModel.fetchAndPersistPacks(refreshing: true)
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -176,7 +180,7 @@ extension PackListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
     
-        return "Archive"
+        return Constants.archiveActionTitle
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -209,6 +213,12 @@ extension PackListViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension PackListViewController: UITableViewDataSource {
     
+    enum TableViewConstants {
+    
+        static let firstSectionTitle = "Gotowe do odbioru"
+        static let secondSectionTitle = "Pozostale"
+    }
+    
     enum PackListViewControllerSection: Int {
 
         case ready = 0
@@ -217,8 +227,8 @@ extension PackListViewController: UITableViewDataSource {
         func headerTitle() -> String? {
 
             switch self {
-                case .ready: return "Gotowe do odbioru"
-                case .other: return "Pozostale"
+            case .ready: return TableViewConstants.firstSectionTitle
+            case .other: return TableViewConstants.secondSectionTitle
             }
         }
     }

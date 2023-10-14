@@ -18,7 +18,6 @@ extension PackTableViewCell {
         }
 
         self.packImageView.image = UIImage(named: pack.shipmentType.imageName)
-
         self.packNumberLabel.text = pack.id
         self.packStatusLabel.text = pack.status.text
         self.packSenderLabel.text = pack.sender
@@ -26,29 +25,44 @@ extension PackTableViewCell {
         if pack.status == .delivered || pack.status == .confirmed,
             let date = pack.pickUpDate {
             
-            self.packDateTitleLabel.text = "ODEBRANA"
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "EE|yy.MM.dd|HH:mm"
-
-            let currentDateString: String = dateFormatter.string(from: date)
-
-            self.packDateLabel.text = currentDateString
+            self.pickUpDateConfiguration(date)
         }
         
         if pack.status == .readyToPickUp,
             let date = pack.storedDate {
             
-            self.packDateTitleLabel.text = "CZEKA NA ODBIÓR DO"
-            
-            self.packDateTitleLabel.text = "ODEBRANA"
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "EE|yy.MM.dd|HH:mm"
-
-            let currentDateString: String = dateFormatter.string(from: date)
-
-            self.packDateLabel.text = currentDateString
+            self.storedDateConfiguration(date)
         }
+    }
+}
+
+// MARK: - Private
+private extension PackTableViewCell {
+    
+    private enum DateSectionConstants {
+        
+        static let pickUpDateTitle = "CZEKA NA ODBIÓR DO"
+        static let storedUpDateTitle = "ODEBRANA"
+        
+        static let dateFormatter = DateFormatter()
+        static let dateFormat = "EE|yy.MM.dd|HH:mm"
+    }
+
+    func pickUpDateConfiguration(_ date: Date) {
+        
+        self.packDateTitleLabel.text = DateSectionConstants.pickUpDateTitle
+        self.dateConfiguration(date)
+    }
+    
+    func storedDateConfiguration(_ date: Date) {
+        
+        self.packDateTitleLabel.text = DateSectionConstants.storedUpDateTitle
+        self.dateConfiguration(date)
+    }
+    
+    func dateConfiguration(_ date: Date) {
+        
+        DateSectionConstants.dateFormatter.dateFormat = DateSectionConstants.dateFormat
+        self.packDateLabel.text = DateSectionConstants.dateFormatter.string(from: date)
     }
 }
