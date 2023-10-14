@@ -46,6 +46,7 @@
 		30CC1DEC2ADAE96300BF2281 /* PackStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DEB2ADAE96300BF2281 /* PackStatusView.swift */; };
 		30CC1DEE2ADAE97000BF2281 /* PackSenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DED2ADAE97000BF2281 /* PackSenderView.swift */; };
 		30CC1DF02ADAE98100BF2281 /* ViewMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DEF2ADAE98100BF2281 /* ViewMoreView.swift */; };
+		30CC1DF22ADAF1D100BF2281 /* UIColor+InPostPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DF12ADAF1D100BF2281 /* UIColor+InPostPalette.swift */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
 		D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListViewController.swift */; };
 		D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D671D9602913E529001FA9D5 /* Assets.xcassets */; };
@@ -114,6 +115,7 @@
 		30CC1DEB2ADAE96300BF2281 /* PackStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackStatusView.swift; sourceTree = "<group>"; };
 		30CC1DED2ADAE97000BF2281 /* PackSenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackSenderView.swift; sourceTree = "<group>"; };
 		30CC1DEF2ADAE98100BF2281 /* ViewMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreView.swift; sourceTree = "<group>"; };
+		30CC1DF12ADAF1D100BF2281 /* UIColor+InPostPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+InPostPalette.swift"; sourceTree = "<group>"; };
 		58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		83D85C87E2E58F658C011C49 /* Pods-InPost Interview Coding Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task.release.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				3039B5352AD6B3BC00D7E915 /* Collection+Safe.swift */,
 				3039B53D2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift */,
 				30CC1DDF2AD967B700BF2281 /* UIViewController+Error.swift */,
+				30CC1DF12ADAF1D100BF2281 /* UIColor+InPostPalette.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -307,8 +310,8 @@
 		30CC1DE62AD99E2B00BF2281 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3039B5572AD890A600D7E915 /* PackTableViewCell+Configuration.swift */,
 				30963D6F2AD451B000898F8A /* PackTableViewCell.swift */,
+				3039B5572AD890A600D7E915 /* PackTableViewCell+Configuration.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				3039B5342AD6A8FA00D7E915 /* PackListViewModel.swift in Sources */,
 				30963D6B2AD44A6900898F8A /* SceneDelegate.swift in Sources */,
 				3039B55C2AD8971600D7E915 /* ShipmentType.swift in Sources */,
+				30CC1DF22ADAF1D100BF2281 /* UIColor+InPostPalette.swift in Sources */,
 				30CC1DF02ADAE98100BF2281 /* ViewMoreView.swift in Sources */,
 				D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */,
 				3039B54F2AD73EA400D7E915 /* PersistanceServiceLayer.swift in Sources */,

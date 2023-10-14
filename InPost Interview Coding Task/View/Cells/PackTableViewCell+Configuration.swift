@@ -14,7 +14,7 @@ extension PackTableViewCell {
         
         if indexPath.row == 0 {
             
-            self.topDivider.isHidden = true
+            self.divider.isHidden = true
         }
 
         self.packInfoView.packImageView.image = UIImage(named: pack.shipmentType.imageName)
