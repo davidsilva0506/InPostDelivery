@@ -13,12 +13,9 @@ class PackTableViewCell: UITableViewCell {
     var packInfoView = PackInfoView()
     var packStatusView = PackStatusView()
     var packSenderView = PackSenderView()
-    var viewMoreContainer = UIView()
+    var viewMoreView = ViewMoreView()
     var topDivider = UIView()
     var bottomDivider = UIView()
-
-    var viewMoreLabel = UILabel()
-    var viewMoreImageView = UIImageView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
@@ -39,13 +36,11 @@ class PackTableViewCell: UITableViewCell {
 private extension PackTableViewCell {
     
     func addSubviews() {
-
-        self.viewMoreContainer.add(self.viewMoreLabel, self.viewMoreImageView)
         
         self.container.add(self.packInfoView,
                            self.packStatusView,
                            self.packSenderView,
-                           self.viewMoreContainer)
+                           self.viewMoreView)
         
         self.contentView.add(self.topDivider, self.container)
     }
@@ -53,14 +48,6 @@ private extension PackTableViewCell {
     func configureView() {
 
         self.selectionStyle = .none
-        
-        self.viewMoreLabel.font = UIFont(name: "Montserrat-Bold", size: 12)
-        self.viewMoreLabel.textColor = .textColor
-        self.viewMoreImageView.clipsToBounds = true
-        self.viewMoreImageView.contentMode = .scaleAspectFit
-        
-        self.viewMoreLabel.text = "więcej"
-        self.viewMoreImageView.image = UIImage(named: "Arrow")
 
         self.topDivider.backgroundColor = .backgrounColor
         
@@ -76,25 +63,11 @@ private extension PackTableViewCell {
         self.packInfoView.translatesAutoresizingMaskIntoConstraints = false
         self.packStatusView.translatesAutoresizingMaskIntoConstraints = false
         self.packSenderView.translatesAutoresizingMaskIntoConstraints = false
-        self.viewMoreContainer.translatesAutoresizingMaskIntoConstraints = false
-
-        self.viewMoreLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.viewMoreImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.viewMoreView.translatesAutoresizingMaskIntoConstraints = false
         
         self.topDivider.translatesAutoresizingMaskIntoConstraints = false
         self.bottomDivider.translatesAutoresizingMaskIntoConstraints = false
-        
-        //View more
-        self.viewMoreLabel.leadingAnchor.constraint(equalTo: self.viewMoreContainer.leadingAnchor).isActive = true
-        self.viewMoreLabel.topAnchor.constraint(equalTo: self.viewMoreContainer.topAnchor, constant: 4).isActive = true
-        self.viewMoreLabel.bottomAnchor.constraint(equalTo: self.viewMoreContainer.bottomAnchor, constant: -4).isActive = true
-        self.viewMoreLabel.trailingAnchor.constraint(greaterThanOrEqualTo: self.viewMoreImageView.leadingAnchor, constant: -4).isActive = true
 
-        self.viewMoreImageView.trailingAnchor.constraint(equalTo: self.viewMoreContainer.trailingAnchor).isActive = true
-        self.viewMoreImageView.topAnchor.constraint(equalTo: self.viewMoreContainer.topAnchor, constant: 4).isActive = true
-        self.viewMoreImageView.bottomAnchor.constraint(equalTo: self.viewMoreContainer.bottomAnchor, constant: -4).isActive = true
-        
-        //Containers
         self.packInfoView.topAnchor.constraint(equalTo: self.container.topAnchor, constant: 16).isActive = true
         self.packInfoView.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 20).isActive = true
         self.packInfoView.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -20).isActive = true
@@ -107,13 +80,13 @@ private extension PackTableViewCell {
         
         self.packSenderView.topAnchor.constraint(equalTo: self.packStatusView.bottomAnchor, constant: 16).isActive = true
         self.packSenderView.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 20).isActive = true
-        self.packSenderView.trailingAnchor.constraint(equalTo: self.viewMoreContainer.leadingAnchor, constant: -4).isActive = true
+        self.packSenderView.trailingAnchor.constraint(equalTo: self.viewMoreView.leadingAnchor, constant: -4).isActive = true
         self.packSenderView.bottomAnchor.constraint(equalTo: self.container.bottomAnchor, constant: -16).isActive = true
         self.packSenderView.heightAnchor.constraint(equalToConstant: 40).isActive = true
 
-        self.viewMoreContainer.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -20).isActive = true
-        self.viewMoreContainer.bottomAnchor.constraint(equalTo: self.container.bottomAnchor, constant: -16).isActive = true
-        self.viewMoreContainer.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        self.viewMoreView.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -20).isActive = true
+        self.viewMoreView.bottomAnchor.constraint(equalTo: self.container.bottomAnchor, constant: -16).isActive = true
+        self.viewMoreView.heightAnchor.constraint(equalToConstant: 40).isActive = true
 
         self.topDivider.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
         self.topDivider.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
