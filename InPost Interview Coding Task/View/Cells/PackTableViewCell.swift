@@ -11,17 +11,13 @@ class PackTableViewCell: UITableViewCell {
     
     var container = UIView()
     var packInfoView = PackInfoView()
-    var packStatusContainer = UIView()
+    var packStatusView = PackStatusView()
     var packSenderContainer = UIView()
     var viewMoreContainer = UIView()
     var topDivider = UIView()
     var bottomDivider = UIView()
 
 
-    var packStatusTitleLabel = UILabel()
-    var packStatusLabel = UILabel()
-    var packDateTitleLabel = UILabel()
-    var packDateLabel = UILabel()
     var packSenderTitleLabel = UILabel()
     var packSenderLabel = UILabel()
     var viewMoreLabel = UILabel()
@@ -49,12 +45,11 @@ private extension PackTableViewCell {
     
     func addSubviews() {
         
-        self.packStatusContainer.add(self.packStatusTitleLabel, self.packStatusLabel, self.packDateTitleLabel, packDateLabel)
         self.packSenderContainer.add(self.packSenderTitleLabel, self.packSenderLabel)
         self.viewMoreContainer.add(self.viewMoreLabel, self.viewMoreImageView)
         
         self.container.add(self.packInfoView,
-                           self.packStatusContainer,
+                           self.packStatusView,
                            self.packSenderContainer,
                            self.viewMoreContainer)
         
@@ -65,27 +60,26 @@ private extension PackTableViewCell {
 
         self.selectionStyle = .none
         
-        self.packStatusTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 11)
-        self.packSenderTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 11)
-        self.packDateTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 11)
         
-        self.packStatusTitleLabel.textColor = .titleColor
+        self.packSenderTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 11)
+        
+        
+        
         self.packSenderTitleLabel.textColor = .titleColor
-        self.packDateTitleLabel.textColor = .titleColor
+        
         
 
         
         
-        self.packStatusLabel.font = UIFont(name: "Montserrat-Bold", size: 15)
+        
         self.packSenderLabel.font = UIFont(name: "Montserrat-Bold", size: 15)
-        self.packDateLabel.font = UIFont(name: "Montserrat-Medium", size: 15)
         
-        self.packStatusLabel.textColor = .textColor
+        
+        
         self.packSenderLabel.textColor = .textColor
-        self.packDateLabel.textColor = .textColor
-        self.packDateLabel.textAlignment = .right
+
         
-        self.packStatusLabel.numberOfLines = 0
+        
         self.packSenderLabel.numberOfLines = 0
         
         self.viewMoreLabel.font = UIFont(name: "Montserrat-Bold", size: 12)
@@ -94,7 +88,7 @@ private extension PackTableViewCell {
         self.viewMoreImageView.contentMode = .scaleAspectFit
         
         
-        self.packStatusTitleLabel.text = "STATUS"
+        
         self.packSenderTitleLabel.text = "NADAWCA"
         
         self.viewMoreLabel.text = "więcej"
@@ -112,15 +106,10 @@ private extension PackTableViewCell {
 
         self.container.translatesAutoresizingMaskIntoConstraints = false
         self.packInfoView.translatesAutoresizingMaskIntoConstraints = false
-        self.packStatusContainer.translatesAutoresizingMaskIntoConstraints = false
+        self.packStatusView.translatesAutoresizingMaskIntoConstraints = false
         self.packSenderContainer.translatesAutoresizingMaskIntoConstraints = false
         self.viewMoreContainer.translatesAutoresizingMaskIntoConstraints = false
 
-
-        self.packStatusTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.packStatusLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.packDateTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.packDateLabel.translatesAutoresizingMaskIntoConstraints = false
         self.packSenderTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.packSenderLabel.translatesAutoresizingMaskIntoConstraints = false
         self.viewMoreLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -128,24 +117,6 @@ private extension PackTableViewCell {
         
         self.topDivider.translatesAutoresizingMaskIntoConstraints = false
         self.bottomDivider.translatesAutoresizingMaskIntoConstraints = false
-        
-        //Pack Info
-
-        
-        //Pack Status
-        self.packStatusTitleLabel.topAnchor.constraint(equalTo: self.packStatusContainer.topAnchor).isActive = true
-        self.packStatusTitleLabel.leadingAnchor.constraint(equalTo: self.packStatusContainer.leadingAnchor).isActive = true
-        
-        self.packStatusLabel.topAnchor.constraint(equalTo: self.packStatusTitleLabel.bottomAnchor).isActive = true
-        self.packStatusLabel.leadingAnchor.constraint(equalTo: self.packStatusContainer.leadingAnchor).isActive = true
-        self.packStatusLabel.bottomAnchor.constraint(equalTo: self.packStatusContainer.bottomAnchor).isActive = true
-        self.packStatusLabel.trailingAnchor.constraint(equalTo: self.packDateLabel.leadingAnchor, constant: -4).isActive = true
-        
-        self.packDateTitleLabel.topAnchor.constraint(equalTo: self.packStatusContainer.topAnchor).isActive = true
-        self.packDateTitleLabel.trailingAnchor.constraint(equalTo: self.packStatusContainer.trailingAnchor).isActive = true
-        
-        self.packDateLabel.topAnchor.constraint(equalTo: self.packDateTitleLabel.bottomAnchor).isActive = true
-        self.packDateLabel.trailingAnchor.constraint(equalTo: self.packStatusContainer.trailingAnchor).isActive = true
         
         //Pack Sender
         self.packSenderTitleLabel.topAnchor.constraint(equalTo: self.packSenderContainer.topAnchor).isActive = true
@@ -171,12 +142,12 @@ private extension PackTableViewCell {
         self.packInfoView.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -20).isActive = true
         self.packInfoView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        self.packStatusContainer.topAnchor.constraint(equalTo: self.packInfoView.bottomAnchor, constant: 16).isActive = true
-        self.packStatusContainer.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 20).isActive = true
-        self.packStatusContainer.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -20).isActive = true
-        self.packStatusContainer.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        self.packStatusView.topAnchor.constraint(equalTo: self.packInfoView.bottomAnchor, constant: 16).isActive = true
+        self.packStatusView.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 20).isActive = true
+        self.packStatusView.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -20).isActive = true
+        self.packStatusView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        self.packSenderContainer.topAnchor.constraint(equalTo: self.packStatusContainer.bottomAnchor, constant: 16).isActive = true
+        self.packSenderContainer.topAnchor.constraint(equalTo: self.packStatusView.bottomAnchor, constant: 16).isActive = true
         self.packSenderContainer.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 20).isActive = true
         self.packSenderContainer.trailingAnchor.constraint(equalTo: self.viewMoreContainer.leadingAnchor, constant: -4).isActive = true
         self.packSenderContainer.bottomAnchor.constraint(equalTo: self.container.bottomAnchor, constant: -16).isActive = true

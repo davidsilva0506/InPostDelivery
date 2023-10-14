@@ -34,15 +34,6 @@ public final class PackInfoView: UIView {
     }
 }
 
-// MARK: - Public
-public extension PackInfoView {
-    
-    func configure(title: String, message: String) {
-        
-
-    }
-}
-
 // MARK: - Private
 private extension PackInfoView {
     

@@ -19,7 +19,7 @@ extension PackTableViewCell {
 
         self.packInfoView.packImageView.image = UIImage(named: pack.shipmentType.imageName)
         self.packInfoView.packNumberLabel.text = pack.id
-        self.packStatusLabel.text = pack.status.text
+        self.packStatusView.packStatusLabel.text = pack.status.text
         self.packSenderLabel.text = pack.sender
         
         if pack.status == .delivered || pack.status == .confirmed,
@@ -50,19 +50,19 @@ private extension PackTableViewCell {
 
     func pickUpDateConfiguration(_ date: Date) {
         
-        self.packDateTitleLabel.text = DateSectionConstants.pickUpDateTitle
+        self.packStatusView.packDateTitleLabel.text = DateSectionConstants.pickUpDateTitle
         self.dateConfiguration(date)
     }
     
     func storedDateConfiguration(_ date: Date) {
         
-        self.packDateTitleLabel.text = DateSectionConstants.storedUpDateTitle
+        self.packStatusView.packDateTitleLabel.text = DateSectionConstants.storedUpDateTitle
         self.dateConfiguration(date)
     }
     
     func dateConfiguration(_ date: Date) {
         
         DateSectionConstants.dateFormatter.dateFormat = DateSectionConstants.dateFormat
-        self.packDateLabel.text = DateSectionConstants.dateFormatter.string(from: date)
+        self.packStatusView.packDateLabel.text = DateSectionConstants.dateFormatter.string(from: date)
     }
 }
