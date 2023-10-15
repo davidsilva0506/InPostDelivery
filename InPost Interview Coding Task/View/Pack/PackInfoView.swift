@@ -21,6 +21,7 @@ public final class PackInfoView: UIView {
         
         static let horizontalSpacing: CGFloat = 4
         static let imageWidth: CGFloat = 50
+        static let imageIdentifier = "PackImage"
     }
 
     // MARK: - Properties
@@ -63,6 +64,7 @@ private extension PackInfoView {
         
         self.packImageView.clipsToBounds = true
         self.packImageView.contentMode = .scaleAspectFit
+        self.packImageView.accessibilityIdentifier = Constants.imageIdentifier
     }
     
     func defineSubviewConstraints() {

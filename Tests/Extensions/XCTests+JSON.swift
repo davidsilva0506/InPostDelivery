@@ -18,13 +18,13 @@ extension XCTestCase {
     }
 
     public func loadJSON<T: Any>(from fileName: String) throws -> T {
-
-        guard let filePath = Bundle(for: type(of: self)).path(forResource: fileName, ofType: "json") else {
+        
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
 
             throw TestError.fileNotFound(fileName: fileName)
         }
 
-        let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
+        let data = try Data(contentsOf: url)
         let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
 
         guard let object = json as? T else {

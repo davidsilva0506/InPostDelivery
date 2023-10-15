@@ -18,8 +18,6 @@ public final class PackStatusView: UIView {
         
         static let valueFontName = "Montserrat-Bold"
         static let valueFontSize: CGFloat = 15
-
-        static let dateTitle = "NR PRZESYŁKI"
         
         static let dateValueFontName = "Montserrat-Medium"
         

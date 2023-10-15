@@ -6,19 +6,18 @@
 //
 
 import Foundation
-import RealmSwift
 
 final class Core: NSObject {
     
-    let network: NetworkLayer
-    let service: ServiceLayer
-    let persistance: PersistanceLayer
-    let persistanceService: PersistanceServiceLayer
+    let network: NetworkLayerProtocol
+    let service: ServiceProtocol & PackProvider
+    let persistance: PersistanceLayerProtocol
+    let persistanceService: PersistanceProtocol & PackPersistanceProvider
 
-    init(network: NetworkLayer,
-         service: ServiceLayer,
-         persistance: PersistanceLayer,
-         persistanceService: PersistanceServiceLayer) {
+    init(network: NetworkLayerProtocol,
+         service: ServiceProtocol & PackProvider,
+         persistance: PersistanceLayerProtocol,
+         persistanceService: PersistanceProtocol & PackPersistanceProvider ) {
         
         self.network = network
         self.service = service

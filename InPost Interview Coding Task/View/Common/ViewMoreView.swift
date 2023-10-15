@@ -58,6 +58,7 @@ private extension ViewMoreView {
         self.viewMoreImageView.clipsToBounds = true
         self.viewMoreImageView.contentMode = .scaleAspectFit
         self.viewMoreImageView.image = UIImage(named: Constants.imageName)
+        self.viewMoreImageView.accessibilityIdentifier = Constants.imageName
     }
     
     func defineSubviewConstraints() {

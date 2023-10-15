@@ -100,5 +100,68 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4572442-0749-48E9-891E-B46B8B0A93E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InPost Interview Coding Task/AppDelegate/SceneDelegate+Automation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "setupAutomationEnvironment(scene:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C4572442-0749-48E9-891E-B46B8B0A93E8 - d354cd4003fd4ad5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InPost_Interview_Coding_Task.SceneDelegate.setupAutomationEnvironment(scene: __C.UIScene) -&gt; ()"
+                  moduleName = "InPost Interview Coding Task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/AppDelegate/SceneDelegate+Automation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "C4572442-0749-48E9-891E-B46B8B0A93E8 - d354cd4003fd4ad5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InPost_Interview_Coding_Task.SceneDelegate.setupAutomationEnvironment(scene: __C.UIScene) -&gt; ()"
+                  moduleName = "InPost Interview Coding Task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/AppDelegate/SceneDelegate+Automation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "C4572442-0749-48E9-891E-B46B8B0A93E8 - d354cd4003fd4ad5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InPost_Interview_Coding_Task.SceneDelegate.setupAutomationEnvironment(scene: __C.UIScene) -&gt; ()"
+                  moduleName = "InPost Interview Coding Task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.silva/InPostDelivery/InPost%20Interview%20Coding%20Task/AppDelegate/SceneDelegate+Automation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

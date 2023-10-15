@@ -46,14 +46,24 @@
 		30CC1DEE2ADAE97000BF2281 /* PackSenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DED2ADAE97000BF2281 /* PackSenderView.swift */; };
 		30CC1DF02ADAE98100BF2281 /* ViewMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DEF2ADAE98100BF2281 /* ViewMoreView.swift */; };
 		30CC1DF22ADAF1D100BF2281 /* UIColor+InPostPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DF12ADAF1D100BF2281 /* UIColor+InPostPalette.swift */; };
-		30CC1DFD2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DFC2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift */; };
-		30CC1E0A2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E092ADB344700BF2281 /* InPost_Interview_Coding_TaskUITests.swift */; };
+		30CC1E0A2ADB344700BF2281 /* InPostUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E092ADB344700BF2281 /* InPostUITests.swift */; };
 		30CC1E0C2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E0B2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift */; };
 		30CC1E122ADB346600BF2281 /* PackListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D96E2913E529001FA9D5 /* PackListViewModelTests.swift */; };
-		30CC1E132ADB346A00BF2281 /* packs.json in Resources */ = {isa = PBXBuildFile; fileRef = D671D99D2915139F001FA9D5 /* packs.json */; };
 		30CC1E142ADB347100BF2281 /* XCTests+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DF42ADB2CC000BF2281 /* XCTests+JSON.swift */; };
 		30CC1E162ADC289800BF2281 /* UIViewHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E152ADC289800BF2281 /* UIViewHelperTests.swift */; };
 		30CC1E182ADC297A00BF2281 /* ArraySafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E172ADC297A00BF2281 /* ArraySafeTests.swift */; };
+		30CC1E1B2ADC784300BF2281 /* XCTests+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DF42ADB2CC000BF2281 /* XCTests+JSON.swift */; };
+		30CC1E202ADC797F00BF2281 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E1D2ADC788A00BF2281 /* AppConstants.swift */; };
+		30CC1E212ADC798300BF2281 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E1D2ADC788A00BF2281 /* AppConstants.swift */; };
+		30CC1E222ADC798300BF2281 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E1D2ADC788A00BF2281 /* AppConstants.swift */; };
+		30CC1E242ADC7A2E00BF2281 /* SceneDelegate+Automation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E232ADC7A2E00BF2281 /* SceneDelegate+Automation.swift */; };
+		30CC1E262ADC7B3A00BF2281 /* PackProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E252ADC7B3A00BF2281 /* PackProviderMock.swift */; };
+		30CC1E3C2ADC817E00BF2281 /* PackPersistanceProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E272ADC7B5F00BF2281 /* PackPersistanceProviderMock.swift */; };
+		30CC1E3D2ADC818700BF2281 /* packs.json in Resources */ = {isa = PBXBuildFile; fileRef = D671D99D2915139F001FA9D5 /* packs.json */; };
+		30CC1E3F2ADC823D00BF2281 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E3E2ADC823D00BF2281 /* NetworkMock.swift */; };
+		30CC1E412ADC824700BF2281 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E402ADC824700BF2281 /* ServiceMock.swift */; };
+		30CC1E432ADC825B00BF2281 /* PersistanceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E422ADC825B00BF2281 /* PersistanceMock.swift */; };
+		30CC1E452ADC826700BF2281 /* PersistanceServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E442ADC826700BF2281 /* PersistanceServiceMock.swift */; };
 		A76FF059D6333EA9D8B8ABCE /* Pods_InPost_Interview_Coding_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF8DFD396F574671BB0D0AF /* Pods_InPost_Interview_Coding_Task.framework */; };
 		CB1BA8B2EC50FDDAC065DAEF /* Pods_InPost_Interview_Coding_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6737778CBF17DA7428EADF62 /* Pods_InPost_Interview_Coding_TaskTests.framework */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
@@ -125,12 +135,19 @@
 		30CC1DF12ADAF1D100BF2281 /* UIColor+InPostPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+InPostPalette.swift"; sourceTree = "<group>"; };
 		30CC1DF42ADB2CC000BF2281 /* XCTests+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTests+JSON.swift"; sourceTree = "<group>"; };
 		30CC1DFA2ADB343700BF2281 /* InPost Interview Coding TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InPost Interview Coding TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		30CC1DFC2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPost_Interview_Coding_TaskTests.swift; sourceTree = "<group>"; };
 		30CC1E072ADB344600BF2281 /* InPost Interview Coding TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InPost Interview Coding TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		30CC1E092ADB344700BF2281 /* InPost_Interview_Coding_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPost_Interview_Coding_TaskUITests.swift; sourceTree = "<group>"; };
+		30CC1E092ADB344700BF2281 /* InPostUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPostUITests.swift; sourceTree = "<group>"; };
 		30CC1E0B2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPost_Interview_Coding_TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		30CC1E152ADC289800BF2281 /* UIViewHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelperTests.swift; sourceTree = "<group>"; };
 		30CC1E172ADC297A00BF2281 /* ArraySafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraySafeTests.swift; sourceTree = "<group>"; };
+		30CC1E1D2ADC788A00BF2281 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		30CC1E232ADC7A2E00BF2281 /* SceneDelegate+Automation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+Automation.swift"; sourceTree = "<group>"; };
+		30CC1E252ADC7B3A00BF2281 /* PackProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackProviderMock.swift; sourceTree = "<group>"; };
+		30CC1E272ADC7B5F00BF2281 /* PackPersistanceProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackPersistanceProviderMock.swift; sourceTree = "<group>"; };
+		30CC1E3E2ADC823D00BF2281 /* NetworkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
+		30CC1E402ADC824700BF2281 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
+		30CC1E422ADC825B00BF2281 /* PersistanceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceMock.swift; sourceTree = "<group>"; };
+		30CC1E442ADC826700BF2281 /* PersistanceServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceServiceMock.swift; sourceTree = "<group>"; };
 		58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		6737778CBF17DA7428EADF62 /* Pods_InPost_Interview_Coding_TaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPost_Interview_Coding_TaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -357,21 +374,31 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		30CC1DFB2ADB343700BF2281 /* InPost Interview Coding TaskTests */ = {
-			isa = PBXGroup;
-			children = (
-				30CC1DFC2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift */,
-			);
-			path = "InPost Interview Coding TaskTests";
-			sourceTree = "<group>";
-		};
 		30CC1E082ADB344700BF2281 /* InPost Interview Coding TaskUITests */ = {
 			isa = PBXGroup;
 			children = (
-				30CC1E092ADB344700BF2281 /* InPost_Interview_Coding_TaskUITests.swift */,
-				30CC1E0B2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift */,
+				30CC1E192ADC2D6A00BF2281 /* AppLaunch */,
+				30CC1E092ADB344700BF2281 /* InPostUITests.swift */,
 			);
 			path = "InPost Interview Coding TaskUITests";
+			sourceTree = "<group>";
+		};
+		30CC1E192ADC2D6A00BF2281 /* AppLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				30CC1E0B2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift */,
+			);
+			path = AppLaunch;
+			sourceTree = "<group>";
+		};
+		30CC1E1A2ADC780F00BF2281 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				30CC1DF32ADB2C9C00BF2281 /* Extensions */,
+				D671D96D2913E529001FA9D5 /* InPost Interview Coding TaskTests */,
+				30CC1E082ADB344700BF2281 /* InPost Interview Coding TaskUITests */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		72CE69CFBD55FBB5B6554360 /* Frameworks */ = {
@@ -401,9 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				D671D9562913E528001FA9D5 /* InPost Interview Coding Task */,
-				D671D96D2913E529001FA9D5 /* InPost Interview Coding TaskTests */,
-				30CC1DFB2ADB343700BF2281 /* InPost Interview Coding TaskTests */,
-				30CC1E082ADB344700BF2281 /* InPost Interview Coding TaskUITests */,
+				30CC1E1A2ADC780F00BF2281 /* Tests */,
 				D671D9552913E528001FA9D5 /* Products */,
 				A71A50FC3ACE229B9D6CDC43 /* Pods */,
 				72CE69CFBD55FBB5B6554360 /* Frameworks */,
@@ -423,6 +448,7 @@
 		D671D9562913E528001FA9D5 /* InPost Interview Coding Task */ = {
 			isa = PBXGroup;
 			children = (
+				D671D9652913E529001FA9D5 /* Info.plist */,
 				30CC1DE32AD99CB000BF2281 /* Resources */,
 				D671D9872913E649001FA9D5 /* AppDelegate */,
 				30CC1DE42AD99CDF00BF2281 /* Core */,
@@ -433,7 +459,7 @@
 				30963D202AD4379E00898F8A /* View */,
 				30963D212AD437A500898F8A /* ViewModel */,
 				30963D6C2AD4504A00898F8A /* Extensions */,
-				D671D9652913E529001FA9D5 /* Info.plist */,
+				D671D99929151360001FA9D5 /* Mock */,
 			);
 			path = "InPost Interview Coding Task";
 			sourceTree = "<group>";
@@ -441,8 +467,6 @@
 		D671D96D2913E529001FA9D5 /* InPost Interview Coding TaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				D671D99929151360001FA9D5 /* Mock */,
-				30CC1DF32ADB2C9C00BF2281 /* Extensions */,
 				D671D96E2913E529001FA9D5 /* PackListViewModelTests.swift */,
 				30CC1E152ADC289800BF2281 /* UIViewHelperTests.swift */,
 				30CC1E172ADC297A00BF2281 /* ArraySafeTests.swift */,
@@ -453,8 +477,10 @@
 		D671D9872913E649001FA9D5 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				30CC1E1D2ADC788A00BF2281 /* AppConstants.swift */,
 				D671D9572913E528001FA9D5 /* AppDelegate.swift */,
 				30963D6A2AD44A6900898F8A /* SceneDelegate.swift */,
+				30CC1E232ADC7A2E00BF2281 /* SceneDelegate+Automation.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -495,6 +521,12 @@
 			isa = PBXGroup;
 			children = (
 				D671D99D2915139F001FA9D5 /* packs.json */,
+				30CC1E252ADC7B3A00BF2281 /* PackProviderMock.swift */,
+				30CC1E272ADC7B5F00BF2281 /* PackPersistanceProviderMock.swift */,
+				30CC1E3E2ADC823D00BF2281 /* NetworkMock.swift */,
+				30CC1E402ADC824700BF2281 /* ServiceMock.swift */,
+				30CC1E422ADC825B00BF2281 /* PersistanceMock.swift */,
+				30CC1E442ADC826700BF2281 /* PersistanceServiceMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -608,7 +640,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30CC1E132ADB346A00BF2281 /* packs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +658,7 @@
 				D671D9642913E529001FA9D5 /* LaunchScreen.storyboard in Resources */,
 				30963D2B2AD43CF500898F8A /* Montserrat-Medium.otf in Resources */,
 				30963D2C2AD43CF500898F8A /* Montserrat-SemiBold.otf in Resources */,
+				30CC1E3D2ADC818700BF2281 /* packs.json in Resources */,
 				D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */,
 				30963D292AD43CF500898F8A /* Montserrat-Bold.otf in Resources */,
 				30963D2A2AD43CF500898F8A /* Montserrat-Black.otf in Resources */,
@@ -745,9 +777,9 @@
 			files = (
 				30CC1E122ADB346600BF2281 /* PackListViewModelTests.swift in Sources */,
 				30CC1E182ADC297A00BF2281 /* ArraySafeTests.swift in Sources */,
-				30CC1DFD2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift in Sources */,
 				30CC1E162ADC289800BF2281 /* UIViewHelperTests.swift in Sources */,
 				30CC1E142ADB347100BF2281 /* XCTests+JSON.swift in Sources */,
+				30CC1E212ADC798300BF2281 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,7 +788,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30CC1E0C2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift in Sources */,
-				30CC1E0A2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITests.swift in Sources */,
+				30CC1E0A2ADB344700BF2281 /* InPostUITests.swift in Sources */,
+				30CC1E1B2ADC784300BF2281 /* XCTests+JSON.swift in Sources */,
+				30CC1E222ADC798300BF2281 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,6 +799,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3039B53E2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift in Sources */,
+				30CC1E432ADC825B00BF2281 /* PersistanceMock.swift in Sources */,
 				30963D702AD451B000898F8A /* PackTableViewCell.swift in Sources */,
 				3039B5402AD6E45D00D7E915 /* PackStatus+Helper.swift in Sources */,
 				3039B5582AD890A600D7E915 /* PackTableViewCell+Configuration.swift in Sources */,
@@ -774,17 +809,21 @@
 				3039B5522AD73F9E00D7E915 /* PersistedPack.swift in Sources */,
 				30963D1C2AD40BA300898F8A /* PackProvider.swift in Sources */,
 				3039B53C2AD6DCDD00D7E915 /* OverlayActivityView.swift in Sources */,
+				30CC1E202ADC797F00BF2281 /* AppConstants.swift in Sources */,
 				3039B5562AD80CDD00D7E915 /* EmptyView.swift in Sources */,
 				3039B55A2AD8970900D7E915 /* PackStatus.swift in Sources */,
 				3039B55E2AD8979F00D7E915 /* ShipmentType+Helper.swift in Sources */,
+				30CC1E262ADC7B3A00BF2281 /* PackProviderMock.swift in Sources */,
 				30963D132AD4047200898F8A /* PackRequest.swift in Sources */,
 				30963D6E2AD4507400898F8A /* UIView+Helper.swift in Sources */,
 				D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */,
+				30CC1E452ADC826700BF2281 /* PersistanceServiceMock.swift in Sources */,
 				D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */,
 				3039B5342AD6A8FA00D7E915 /* PackListViewModel.swift in Sources */,
 				30963D6B2AD44A6900898F8A /* SceneDelegate.swift in Sources */,
 				3039B55C2AD8971600D7E915 /* ShipmentType.swift in Sources */,
 				30CC1DF22ADAF1D100BF2281 /* UIColor+InPostPalette.swift in Sources */,
+				30CC1E242ADC7A2E00BF2281 /* SceneDelegate+Automation.swift in Sources */,
 				30CC1DF02ADAE98100BF2281 /* ViewMoreView.swift in Sources */,
 				D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */,
 				3039B54F2AD73EA400D7E915 /* PersistanceServiceLayer.swift in Sources */,
@@ -800,8 +839,11 @@
 				30963D102AD4042B00898F8A /* NetworkConfig.swift in Sources */,
 				30963D152AD4049A00898F8A /* RequestProtocol.swift in Sources */,
 				30CC1DEA2ADAE95500BF2281 /* PackInfoView.swift in Sources */,
+				30CC1E3C2ADC817E00BF2281 /* PackPersistanceProviderMock.swift in Sources */,
 				3039B54C2AD73E0900D7E915 /* PersistanceProtocol.swift in Sources */,
+				30CC1E3F2ADC823D00BF2281 /* NetworkMock.swift in Sources */,
 				30963D182AD405D100898F8A /* ServiceProtocol.swift in Sources */,
+				30CC1E412ADC824700BF2281 /* ServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

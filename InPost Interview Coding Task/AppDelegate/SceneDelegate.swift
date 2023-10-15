@@ -23,17 +23,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        self.setupCore()
+        if ProcessInfo.processInfo.arguments.contains(AppConstants.automationLaunchArgument) {
+            
+            self.setupAutomationEnvironment(scene: scene)
 
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        
-        guard let window = self.window else { return }
+        } else {
+            
+            self.setupCore()
 
-        window.windowScene = windowScene
-        window.rootViewController = self.rootViewController()
-        window.makeKeyAndVisible()
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            
+            self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+            
+            guard let window = self.window else { return }
+
+            window.windowScene = windowScene
+            window.rootViewController = self.rootViewController()
+            window.makeKeyAndVisible()
+        }
     }
 }
 
