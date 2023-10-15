@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3039B5342AD6A8FA00D7E915 /* PackListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5332AD6A8FA00D7E915 /* PackListViewModel.swift */; };
-		3039B5362AD6B3BC00D7E915 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5352AD6B3BC00D7E915 /* Collection+Safe.swift */; };
+		3039B5362AD6B3BC00D7E915 /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B5352AD6B3BC00D7E915 /* Array+Safe.swift */; };
 		3039B53C2AD6DCDD00D7E915 /* OverlayActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B53B2AD6DCDD00D7E915 /* OverlayActivityView.swift */; };
 		3039B53E2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B53D2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift */; };
 		3039B5402AD6E45D00D7E915 /* PackStatus+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039B53F2AD6E45D00D7E915 /* PackStatus+Helper.swift */; };
@@ -49,9 +49,11 @@
 		30CC1DFD2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DFC2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift */; };
 		30CC1E0A2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E092ADB344700BF2281 /* InPost_Interview_Coding_TaskUITests.swift */; };
 		30CC1E0C2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E0B2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift */; };
-		30CC1E122ADB346600BF2281 /* InPostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D96E2913E529001FA9D5 /* InPostTests.swift */; };
+		30CC1E122ADB346600BF2281 /* PackListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D96E2913E529001FA9D5 /* PackListViewModelTests.swift */; };
 		30CC1E132ADB346A00BF2281 /* packs.json in Resources */ = {isa = PBXBuildFile; fileRef = D671D99D2915139F001FA9D5 /* packs.json */; };
 		30CC1E142ADB347100BF2281 /* XCTests+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DF42ADB2CC000BF2281 /* XCTests+JSON.swift */; };
+		30CC1E162ADC289800BF2281 /* UIViewHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E152ADC289800BF2281 /* UIViewHelperTests.swift */; };
+		30CC1E182ADC297A00BF2281 /* ArraySafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E172ADC297A00BF2281 /* ArraySafeTests.swift */; };
 		A76FF059D6333EA9D8B8ABCE /* Pods_InPost_Interview_Coding_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF8DFD396F574671BB0D0AF /* Pods_InPost_Interview_Coding_Task.framework */; };
 		CB1BA8B2EC50FDDAC065DAEF /* Pods_InPost_Interview_Coding_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6737778CBF17DA7428EADF62 /* Pods_InPost_Interview_Coding_TaskTests.framework */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
@@ -83,7 +85,7 @@
 /* Begin PBXFileReference section */
 		0DF8DFD396F574671BB0D0AF /* Pods_InPost_Interview_Coding_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPost_Interview_Coding_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3039B5332AD6A8FA00D7E915 /* PackListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackListViewModel.swift; sourceTree = "<group>"; };
-		3039B5352AD6B3BC00D7E915 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
+		3039B5352AD6B3BC00D7E915 /* Array+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
 		3039B53B2AD6DCDD00D7E915 /* OverlayActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayActivityView.swift; sourceTree = "<group>"; };
 		3039B53D2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityOverlay.swift"; sourceTree = "<group>"; };
 		3039B53F2AD6E45D00D7E915 /* PackStatus+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PackStatus+Helper.swift"; sourceTree = "<group>"; };
@@ -127,6 +129,8 @@
 		30CC1E072ADB344600BF2281 /* InPost Interview Coding TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InPost Interview Coding TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CC1E092ADB344700BF2281 /* InPost_Interview_Coding_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPost_Interview_Coding_TaskUITests.swift; sourceTree = "<group>"; };
 		30CC1E0B2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPost_Interview_Coding_TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		30CC1E152ADC289800BF2281 /* UIViewHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelperTests.swift; sourceTree = "<group>"; };
+		30CC1E172ADC297A00BF2281 /* ArraySafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraySafeTests.swift; sourceTree = "<group>"; };
 		58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		6737778CBF17DA7428EADF62 /* Pods_InPost_Interview_Coding_TaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPost_Interview_Coding_TaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +143,7 @@
 		D671D9602913E529001FA9D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D671D9632913E529001FA9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D671D9652913E529001FA9D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D671D96E2913E529001FA9D5 /* InPostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPostTests.swift; sourceTree = "<group>"; };
+		D671D96E2913E529001FA9D5 /* PackListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackListViewModelTests.swift; sourceTree = "<group>"; };
 		D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPNavigationController.swift; sourceTree = "<group>"; };
 		D671D98E2913F2A1001FA9D5 /* Pack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pack.swift; sourceTree = "<group>"; };
 		D671D99D2915139F001FA9D5 /* packs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = packs.json; sourceTree = "<group>"; };
@@ -282,7 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				30963D6D2AD4507400898F8A /* UIView+Helper.swift */,
-				3039B5352AD6B3BC00D7E915 /* Collection+Safe.swift */,
+				3039B5352AD6B3BC00D7E915 /* Array+Safe.swift */,
 				3039B53D2AD6DD7600D7E915 /* UIViewController+ActivityOverlay.swift */,
 				30CC1DDF2AD967B700BF2281 /* UIViewController+Error.swift */,
 				30CC1DF12ADAF1D100BF2281 /* UIColor+InPostPalette.swift */,
@@ -439,7 +443,9 @@
 			children = (
 				D671D99929151360001FA9D5 /* Mock */,
 				30CC1DF32ADB2C9C00BF2281 /* Extensions */,
-				D671D96E2913E529001FA9D5 /* InPostTests.swift */,
+				D671D96E2913E529001FA9D5 /* PackListViewModelTests.swift */,
+				30CC1E152ADC289800BF2281 /* UIViewHelperTests.swift */,
+				30CC1E172ADC297A00BF2281 /* ArraySafeTests.swift */,
 			);
 			path = "InPost Interview Coding TaskTests";
 			sourceTree = "<group>";
@@ -737,8 +743,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30CC1E122ADB346600BF2281 /* InPostTests.swift in Sources */,
+				30CC1E122ADB346600BF2281 /* PackListViewModelTests.swift in Sources */,
+				30CC1E182ADC297A00BF2281 /* ArraySafeTests.swift in Sources */,
 				30CC1DFD2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift in Sources */,
+				30CC1E162ADC289800BF2281 /* UIViewHelperTests.swift in Sources */,
 				30CC1E142ADB347100BF2281 /* XCTests+JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,7 +789,7 @@
 				D671D95C2913E528001FA9D5 /* PackListViewController.swift in Sources */,
 				3039B54F2AD73EA400D7E915 /* PersistanceServiceLayer.swift in Sources */,
 				3039B5472AD7311000D7E915 /* PersistanceLayer.swift in Sources */,
-				3039B5362AD6B3BC00D7E915 /* Collection+Safe.swift in Sources */,
+				3039B5362AD6B3BC00D7E915 /* Array+Safe.swift in Sources */,
 				3039B5602AD8A44400D7E915 /* SectionHeaderView.swift in Sources */,
 				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
 				30963D1A2AD406A700898F8A /* ServiceLayer.swift in Sources */,
