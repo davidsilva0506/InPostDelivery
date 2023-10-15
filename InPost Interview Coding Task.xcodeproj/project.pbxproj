@@ -49,6 +49,9 @@
 		30CC1DFD2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DFC2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift */; };
 		30CC1E0A2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E092ADB344700BF2281 /* InPost_Interview_Coding_TaskUITests.swift */; };
 		30CC1E0C2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1E0B2ADB344700BF2281 /* InPost_Interview_Coding_TaskUITestsLaunchTests.swift */; };
+		30CC1E122ADB346600BF2281 /* InPostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D96E2913E529001FA9D5 /* InPostTests.swift */; };
+		30CC1E132ADB346A00BF2281 /* packs.json in Resources */ = {isa = PBXBuildFile; fileRef = D671D99D2915139F001FA9D5 /* packs.json */; };
+		30CC1E142ADB347100BF2281 /* XCTests+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC1DF42ADB2CC000BF2281 /* XCTests+JSON.swift */; };
 		A76FF059D6333EA9D8B8ABCE /* Pods_InPost_Interview_Coding_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF8DFD396F574671BB0D0AF /* Pods_InPost_Interview_Coding_Task.framework */; };
 		CB1BA8B2EC50FDDAC065DAEF /* Pods_InPost_Interview_Coding_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6737778CBF17DA7428EADF62 /* Pods_InPost_Interview_Coding_TaskTests.framework */; };
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
@@ -57,7 +60,6 @@
 		D671D9642913E529001FA9D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D671D9622913E529001FA9D5 /* LaunchScreen.storyboard */; };
 		D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */; };
 		D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D98E2913F2A1001FA9D5 /* Pack.swift */; };
-		D671D99E2915139F001FA9D5 /* packs.json in Resources */ = {isa = PBXBuildFile; fileRef = D671D99D2915139F001FA9D5 /* packs.json */; };
 		F39216E25C191FF8AE2F36C4 /* Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC566583FEC9A5E18A56E18 /* Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -600,6 +602,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CC1E132ADB346A00BF2281 /* packs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +620,6 @@
 				30963D2D2AD43CF500898F8A /* Montserrat-ExtraBold.otf in Resources */,
 				D671D9642913E529001FA9D5 /* LaunchScreen.storyboard in Resources */,
 				30963D2B2AD43CF500898F8A /* Montserrat-Medium.otf in Resources */,
-				D671D99E2915139F001FA9D5 /* packs.json in Resources */,
 				30963D2C2AD43CF500898F8A /* Montserrat-SemiBold.otf in Resources */,
 				D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */,
 				30963D292AD43CF500898F8A /* Montserrat-Bold.otf in Resources */,
@@ -735,7 +737,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CC1E122ADB346600BF2281 /* InPostTests.swift in Sources */,
 				30CC1DFD2ADB343700BF2281 /* InPost_Interview_Coding_TaskTests.swift in Sources */,
+				30CC1E142ADB347100BF2281 /* XCTests+JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

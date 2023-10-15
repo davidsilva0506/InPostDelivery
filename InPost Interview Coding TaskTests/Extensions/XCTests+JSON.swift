@@ -40,6 +40,9 @@ extension XCTestCase {
         let file = try self.loadJSON(from: fileName) as Any
         let data = try JSONSerialization.data(withJSONObject: file, options: [.prettyPrinted])
 
-        return try JSONDecoder().decode(T.self, from: data)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+
+        return try decoder.decode(T.self, from: data)
     }
 }

@@ -93,8 +93,9 @@ private extension PackListViewModel {
 
             let packs = try self.persistanceProvider.fetchPacks()
             let visiblePacks = Self.removeArchivedPacks(packs)
+            let orderedPacks = Self.orderPacks(visiblePacks)
             
-            self.packs = Self.groupPacks(visiblePacks)
+            self.packs = Self.groupPacks(orderedPacks)
 
             self.packs.joined().count > 0 ? self.currentState.send(.loaded) : self.currentState.send(.empty)
 
@@ -128,17 +129,6 @@ extension PackListViewModel {
         return packs.filter { $0.isArchived ?? false == false }
     }
  
-    static func groupPacks(_ packs: [Pack]) -> [[Pack]] {
-
-        let readyPacks = packs.filter { $0.status.activityStatus == .ready }
-        let otherPacks = packs.filter { $0.status.activityStatus == .other }
-
-        let orderedReadyPacks = Self.orderPacks(readyPacks)
-        let orderedOtherPacks = Self.orderPacks(otherPacks)
-
-        return [orderedReadyPacks, orderedOtherPacks]
-    }
- 
     static func orderPacks(_ packs: [Pack]) -> [Pack] {
         
         return packs.sorted {
@@ -155,5 +145,13 @@ extension PackListViewModel {
              $1.storedDate ?? Date.distantFuture,
              $1.id)
         }
+    }
+    
+    static func groupPacks(_ packs: [Pack]) -> [[Pack]] {
+
+        let readyPacks = packs.filter { $0.status.activityStatus == .ready }
+        let otherPacks = packs.filter { $0.status.activityStatus == .other }
+
+        return [readyPacks, otherPacks]
     }
 }
