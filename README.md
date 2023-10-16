@@ -10,6 +10,7 @@ All package data is persisted, and users have the option to archive packages by 
 - **Package Categories:** Packages are organized into "Ready" and "Other"
 - **Package Details:** Access detailed information about each package, including status, sender details and delivery dates.
 - **Archiving:** Archive packages for better organization and historical tracking.
+- **Pull to Refresh:** Refresh the package list by pulling down on the list, ensuring you have the most up-to-date package information.
 
 ## Technologies Used
 
